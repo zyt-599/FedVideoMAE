@@ -1,0 +1,64 @@
+experiment: pretrain_rwf2000
+output_dir: FedVideomae_DP/runs/pretrain_rwf2000_epsilon_10
+
+data:
+  root: FedVideomae_DP/dataset/RWF-2000/train
+  num_frames: 16
+  frame_stride: 4
+  size: 224
+  batch_size: 32
+  num_workers: 8
+  partitions: null
+  
+model:
+  model_name: MCG-NJU/videomae-base
+  pretrained: false
+  mode: pretrain  # pretrain|feature|head
+  mask_ratio: 0.9
+  peft:
+    use_lora: true
+    lora_r: 16
+    lora_alpha: 32
+    lora_dropout: 0.0
+    target_modules: [q_proj, k_proj, v_proj, out_proj, fc1, fc2]
+  prompt:
+    use_recon_prompt: true
+    prompt_dim: 1536  # 3 * patch_size * patch_size
+    prompt_len: 8
+
+federated:
+  num_clients: 1
+  clients_per_round: 1
+  rounds: 200
+  local_epochs: 1
+  lr: 2.0e-4 
+  weight_decay: 0.01
+  clip_grad: 5.0
+  aggregator: fedavg
+  server_side_recon:
+    enabled: false
+    buffer_dir: null
+    steps: 50
+    lr: 3.0e-4
+  use_amp: true
+  
+  # Differential Privacy Configuration
+  differential_privacy:
+    enabled: true  # Set to true to enable DP
+    target_epsilon: 20  # Privacy budget (lower = more private)
+    target_delta: 1.0e-5  # Privacy parameter
+    noise_multiplier: null  # Auto-calculated if null
+    max_grad_norm: 1.0  # Gradient clipping for DP
+    
+  # Secure Aggregation Configuration  
+  secure_aggregation:
+    enabled: true  # Set to true to enable secure aggregation
+    threshold: null  # Minimum clients for aggregation (default: num_clients/2 + 1)
+    
+  # Privacy-preserving server-side noise
+  server_noise_scale: 0.0  # Add noise to aggregated model (0.0 = no noise)
+seed: 42
+
+logging:
+  log_every: 20
+  save_every_round: 1

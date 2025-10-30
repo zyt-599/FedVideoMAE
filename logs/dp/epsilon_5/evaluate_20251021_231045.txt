@@ -1,0 +1,80 @@
+=== Task: evaluate ===
+timestamp: 20251021_231045
+config:
+experiment: evaluate_small_head_rwf2000
+output_dir: FedVideomae_DP/evaluation_results/small_head_rwf2000
+seed: 42
+data:
+  root: FedVideomae_DP/dataset/RWF-2000/evaluate
+  num_frames: 16
+  frame_stride: 4
+  size: 224
+  batch_size: 32
+  num_workers: 8
+  partitions: null
+model:
+  model_name: MCG-NJU/videomae-base
+  pretrained: false
+  pretrained_checkpoint: FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_5/model_best.pth
+  mode: head
+  peft:
+    use_lora: true
+    lora_r: 16
+    lora_alpha: 32
+    lora_dropout: 0.12
+    target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - out_proj
+    - fc1
+    - fc2
+  head:
+    num_classes: 2
+    type: mlp
+    hidden_dim: 1536
+    num_layers: 2
+    dropout: 0.2
+logging:
+  log_every: 20
+[Init] Using pretrained checkpoint: FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_5/model_best.pth | sha256=350535b563f6801d
+metrics:
+accuracy: 0.6525
+precision_weighted: 0.6563
+recall_weighted: 0.6525
+f1_weighted: 0.6504
+precision_macro: 0.6563
+recall_macro: 0.6525
+f1_macro: 0.6504
+correct: 261/400
+
+[ApplyBestThreshold] Re-evaluating with threshold=0.44
+Evaluating classification: 100%|████████████████████████████████████| 400/400 [04:12<00:00,  1.59samples/s, Accuracy=0.6525, Correct=261/400]
+
+=== Classification Performance Metrics ===
+Accuracy: 0.6525
+Correct: 261/400
+Precision (Weighted): 0.6563
+Recall (Weighted): 0.6525
+F1-Score (Weighted): 0.6504
+Precision (Macro): 0.6563
+Recall (Macro): 0.6525
+F1-Score (Macro): 0.6504
+
+=== Per-Class Metrics ===
+NonFight:
+  Precision: 0.6805
+  Recall: 0.5750
+  F1-Score: 0.6233
+  Support: 200
+Fight:
+  Precision: 0.6320
+  Recall: 0.7300
+  F1-Score: 0.6775
+  Support: 200
+
+=== Confusion Matrix ===
+         Predicted
+         NonFight  Fight
+Actual NonFight    115     85
+       Fight         54    146

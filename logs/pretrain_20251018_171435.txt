@@ -1,0 +1,43 @@
+=== Task: pretrain (server) ===
+timestamp: 20251018_171435
+config:
+rounds: 20
+clients_per_round: 1
+local_epochs: 1
+optimizer:
+  lr: 0.005
+  weight_decay: 0.0
+batch_size: 16
+num_workers: 8
+use_amp: false
+dp:
+  enabled: false
+  target_epsilon: 10.0
+  target_delta: 1.0e-05
+  noise_multiplier: null
+  max_grad_norm: 1.0
+secure_aggregation:
+  enabled: false
+  threshold: 1
+server_noise_scale: 0.0
+[Round 1] global metrics: loss=0.6729
+[Round 2] global metrics: loss=0.9774
+[Round 3] global metrics: loss=1.0226
+[Round 4] global metrics: loss=0.0421
+[Round 5] global metrics: loss=0.7491
+[Round 6] global metrics: loss=0.0384
+[Round 7] global metrics: loss=0.2088
+[Round 8] global metrics: loss=1.6769
+[Round 9] global metrics: loss=0.5177
+[Round 10] global metrics: loss=0.3288
+[Round 11] global metrics: loss=0.8307
+[Round 12] global metrics: loss=1.2715
+[Round 13] global metrics: loss=0.9472
+[Round 14] global metrics: loss=0.5722
+[Round 15] global metrics: loss=0.9078
+[Round 16] global metrics: loss=1.2839
+[Round 17] global metrics: loss=0.3609
+[Round 18] global metrics: loss=1.1618
+[Round 19] global metrics: loss=0.7164
+[Round 20] global metrics: loss=0.2977
+[Done] training completed. final checkpoint saved.

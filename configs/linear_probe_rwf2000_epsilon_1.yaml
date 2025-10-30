@@ -1,0 +1,47 @@
+experiment: linear_probe_rwf2000
+output_dir: FedVideomae_DP/runs/linear_probe_rwf2000
+seed: 42
+
+data:
+  # Use dataset base; script will resolve base/train and base/evaluate automatically
+  root: FedVideomae_DP/dataset/RWF-2000
+  num_frames: 16
+  frame_stride: 4
+  size: 224
+  batch_size: 16
+  num_workers: 8
+  partitions: null
+
+model:
+  model_name: MCG-NJU/videomae-base
+  pretrained: false  # Use custom pretrained weights
+  pretrained_checkpoint: FedVideomae_DP/runs/pretrain_rwf2000_epsilon_1/model_final.pth  # Pretrained model path
+  mode: feature
+  peft:
+    use_lora: true
+    lora_r: 16
+    lora_alpha: 32
+    lora_dropout: 0.0
+    target_modules: [q_proj, k_proj, v_proj, out_proj, fc1, fc2]
+  head:
+    num_classes: 2
+    type: linear
+
+training:
+  epochs: 20
+  lr: 5.0e-3
+  weight_decay: 0
+  loss:
+    type: weighted_ce
+    class_weights: none  # [NonFight, Fight]
+
+logging:
+  log_every: 20
+  save_every_round: 1
+
+evaluation:
+  ci:
+    method: bootstrap
+    n_samples: 1000
+    alpha: 0.05
+    seed: 42

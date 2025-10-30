@@ -1,0 +1,135 @@
+=== Task: small_head_finetune ===
+timestamp: 20251021_232052
+config:
+experiment: central_weak_finetune_rwf2000
+output_dir: FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_10
+seed: 42
+data:
+  root: FedVideomae_DP/dataset/RWF-2000/train
+  val_root: FedVideomae_DP/dataset/RWF-2000/val
+  num_frames: 8
+  frame_stride: 4
+  size: 224
+  batch_size: 32
+  num_workers: 8
+  pin_memory: true
+  val_pin_memory: true
+  val_batch_size: 16
+  aug:
+    jitter_b: 0.25
+    jitter_c: 0.2
+    jitter_s: 0.18
+    grayscale_p: 0.15
+    erase_p: 0.1
+    erase_scale:
+    - 0.02
+    - 0.08
+    erase_ratio:
+    - 0.3
+    - 3.3
+model:
+  model_name: MCG-NJU/videomae-base
+  pretrained_checkpoint: FedVideomae_DP/runs/pretrain_rwf2000_epsilon_10/model_final.pth
+  head:
+    num_classes: 2
+    type: mlp
+    hidden_dim: 1536
+    num_layers: 2
+    dropout: 0.2
+  peft:
+    use_lora: true
+    lora_r: 16
+    lora_alpha: 32
+    lora_dropout: 0.0
+    backprop_backbone: false
+    train_last_blocks: 0
+    target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - out_proj
+    - fc1
+    - fc2
+training:
+  epochs: 20
+  lr: 0.00015
+  weight_decay: 0.01
+  lr_scheduler: cosine
+  clip_grad: 1.0
+  use_amp: true
+  threshold_scan_metric: f1_macro
+  select_best_metric: f1_macro_thr
+  weighted_sampler: false
+  use_focal: false
+  focal_gamma: 1.5
+  grad_checkpoint: false
+  deterministic: true
+  disable_oom_autotune: true
+  grad_accum_steps: 2
+  min_lr: 1.0e-06
+  unfreeze_base: false
+  unfreeze_schedule: []
+  warmup_epochs: 5
+  clear_cache_each_epoch: true
+  label_smoothing: 0.0
+  class_weights:
+  - 1.25
+  - 1.0
+  mixup:
+    enable: false
+    alpha: 0.2
+    prob: 0.3
+    start_after_first_unfreeze: true
+    disable_after_epoch: 65
+  ema:
+    enable: false
+    decay: 0.9995
+    update_every: 8
+  window_adjustments:
+  - start_epoch: 45
+    end_epoch: 50
+    label_smoothing: 0.0
+    mixup_prob: 0.2
+    ema_decay: 0.995
+  - start_epoch: 51
+    end_epoch: 55
+    label_smoothing: 0.02
+    mixup_prob: 0.3
+    ema_decay: 0.9995
+  - start_epoch: 56
+    end_epoch: 100
+    class_weights:
+    - 1.15
+    - 1.0
+logging:
+  log_every: 20
+[Init] LoRA fingerprint: keys=200 elems=3145728 sha256=66f88fada2ede715
+[Init] Encoder fingerprint: pos_embed=2b548a93603f7f24 blk0=51dd8e40da9b98b5
+[Init] Encoder full-hash: 9c722f961c43f6c3
+[Init] Optim groups: main=3545090 params @ lr=0.00015, bb=0 params @ lr=1e-05
+[Init] Trainable params: total=3545090 | lora=0 | head=3545090 | backbone=0
+[Val] epoch=1 acc=0.540000 loss=0.684269 f1_macro=0.483784 f1_weighted=0.483784 | thr@f1_macro 0.45/0.629286
+[Best] epoch=1 val_best_threshold_score=0.6293 saved=FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_10/model_best.pth
+[Val] epoch=2 acc=0.680000 loss=0.672058 f1_macro=0.676768 f1_weighted=0.676768 | thr@f1_macro 0.50/0.676768
+[Best] epoch=2 val_best_threshold_score=0.6768 saved=FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_10/model_best.pth
+[Val] epoch=3 acc=0.510000 loss=0.678943 f1_macro=0.405051 f1_weighted=0.405051 | thr@f1_macro 0.41/0.674499
+[Val] epoch=4 acc=0.485000 loss=0.668354 f1_macro=0.395380 f1_weighted=0.395380 | thr@f1_macro 0.43/0.705996
+[Best] epoch=4 val_best_threshold_score=0.7060 saved=FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_10/model_best.pth
+[Val] epoch=5 acc=0.535000 loss=0.660653 f1_macro=0.493891 f1_weighted=0.493891 | thr@f1_macro 0.41/0.668967
+[Val] epoch=6 acc=0.655000 loss=0.659146 f1_macro=0.628942 f1_weighted=0.628942 | thr@f1_macro 0.55/0.706448
+[Best] epoch=6 val_best_threshold_score=0.7064 saved=FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_10/model_best.pth
+[Val] epoch=7 acc=0.555000 loss=0.665908 f1_macro=0.490832 f1_weighted=0.490832 | thr@f1_macro 0.40/0.678390
+[Val] epoch=8 acc=0.695000 loss=0.639345 f1_macro=0.693275 f1_weighted=0.693275 | thr@f1_macro 0.49/0.696326
+[Val] epoch=9 acc=0.575000 loss=0.659831 f1_macro=0.554402 f1_weighted=0.554402 | thr@f1_macro 0.43/0.688764
+[Val] epoch=10 acc=0.520000 loss=0.669053 f1_macro=0.433896 f1_weighted=0.433896 | thr@f1_macro 0.34/0.696621
+[Val] epoch=11 acc=0.530000 loss=0.649476 f1_macro=0.486844 f1_weighted=0.486844 | thr@f1_macro 0.41/0.702497
+[Val] epoch=12 acc=0.680000 loss=0.639749 f1_macro=0.674499 f1_weighted=0.674499 | thr@f1_macro 0.45/0.687756
+[Val] epoch=13 acc=0.580000 loss=0.650286 f1_macro=0.565936 f1_weighted=0.565936 | thr@f1_macro 0.43/0.685364
+[Val] epoch=14 acc=0.610000 loss=0.645795 f1_macro=0.605223 f1_weighted=0.605223 | thr@f1_macro 0.45/0.694843
+[Val] epoch=15 acc=0.610000 loss=0.641563 f1_macro=0.588217 f1_weighted=0.588217 | thr@f1_macro 0.38/0.693802
+[Val] epoch=16 acc=0.585000 loss=0.639121 f1_macro=0.564887 f1_weighted=0.564887 | thr@f1_macro 0.38/0.693802
+[Val] epoch=17 acc=0.555000 loss=0.642579 f1_macro=0.518594 f1_weighted=0.518594 | thr@f1_macro 0.37/0.693802
+[Val] epoch=18 acc=0.580000 loss=0.643204 f1_macro=0.546974 f1_weighted=0.546974 | thr@f1_macro 0.39/0.692059
+[Val] epoch=19 acc=0.580000 loss=0.642393 f1_macro=0.549550 f1_weighted=0.549550 | thr@f1_macro 0.38/0.693802
+[Val] epoch=20 acc=0.565000 loss=0.642139 f1_macro=0.537222 f1_weighted=0.537222 | thr@f1_macro 0.40/0.697917
+[Done] finetune completed

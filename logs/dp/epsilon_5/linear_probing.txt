@@ -1,0 +1,108 @@
+(FedVideoMAE) root@autodl-container-4e29479a95-f4395cfc:~/autodl-tmp# python -m FedVideomae_DP.train.fl_eval_linear --config configs/linear_probe_rwf2000.yaml
+/root/miniconda3/envs/FedVideoMAE/lib/python3.9/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/root/miniconda3/envs/FedVideoMAE/lib/python3.9/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+[LoRA] Injected 100 layers -> LoRALinear; samples: ['backbone.encoder.blocks.0.attn.q_proj', 'backbone.encoder.blocks.0.attn.k_proj', 'backbone.encoder.blocks.0.attn.v_proj', 'backbone.encoder.blocks.0.mlp.fc1', 'backbone.encoder.blocks.0.mlp.fc2', 'backbone.encoder.blocks.1.attn.q_proj', 'backbone.encoder.blocks.1.attn.k_proj', 'backbone.encoder.blocks.1.attn.v_proj'] ...; trainable params=3145728
+Warning: Unexpected keys when loading pretrained weights: 3 keys
+Loaded pretrained weights from FedVideomae_DP/runs/pretrain_rwf2000_epsilon_5/model_final.pth
+Using weighted loss with class weights: [1.2, 1.3]
+
+[Server] Round 1/20 | selected=['1']
+[Client1] Final: loss=1.0266 acc=0.2500                                                                                 
+[Server] Round 1 global metrics: loss=1.0266
+
+[Server] Round 2/20 | selected=['1']
+[Client1] Final: loss=0.9201 acc=0.5000                                                                                 
+[Server] Round 2 global metrics: loss=0.9201
+
+[Server] Round 3/20 | selected=['1']
+[Client1] Final: loss=1.1175 acc=0.5000                                                                                 
+[Server] Round 3 global metrics: loss=1.1175
+
+[Server] Round 4/20 | selected=['1']
+[Client1] Final: loss=0.3224 acc=0.7500                                                                                 
+[Server] Round 4 global metrics: loss=0.3224
+
+[Server] Round 5/20 | selected=['1']
+[Client1] Final: loss=1.7847 acc=0.7500                                                                                 
+[Server] Round 5 global metrics: loss=1.7847
+
+[Server] Round 6/20 | selected=['1']
+[Client1] Final: loss=0.0181 acc=1.0000                                                                                 
+[Server] Round 6 global metrics: loss=0.0181
+
+[Server] Round 7/20 | selected=['1']
+[Client1] Final: loss=1.5775 acc=0.5000                                                                                 
+[Server] Round 7 global metrics: loss=1.5775
+
+[Server] Round 8/20 | selected=['1']
+[Client1] Final: loss=1.4559 acc=0.2500                                                                                 
+[Server] Round 8 global metrics: loss=1.4559
+
+[Server] Round 9/20 | selected=['1']
+[Client1] Final: loss=0.8720 acc=0.5000                                                                                 
+[Server] Round 9 global metrics: loss=0.8720
+
+[Server] Round 10/20 | selected=['1']
+[Client1] Final: loss=0.5152 acc=0.5000                                                                                 
+[Server] Round 10 global metrics: loss=0.5152
+
+[Server] Round 11/20 | selected=['1']
+[Client1] Final: loss=2.9648 acc=0.5000                                                                                 
+[Server] Round 11 global metrics: loss=2.9648
+
+[Server] Round 12/20 | selected=['1']
+[Client1] Final: loss=1.5568 acc=0.2500                                                                                 
+[Server] Round 12 global metrics: loss=1.5568
+
+[Server] Round 13/20 | selected=['1']
+[Client1] Final: loss=0.9471 acc=0.5000                                                                                 
+[Server] Round 13 global metrics: loss=0.9471
+
+[Server] Round 14/20 | selected=['1']
+[Client1] Final: loss=0.5073 acc=0.7500                                                                                 
+[Server] Round 14 global metrics: loss=0.5073
+
+[Server] Round 15/20 | selected=['1']
+[Client1] Final: loss=0.3822 acc=0.7500                                                                                 
+[Server] Round 15 global metrics: loss=0.3822
+
+[Server] Round 16/20 | selected=['1']
+[Client1] Final: loss=0.9914 acc=0.5000                                                                                 
+[Server] Round 16 global metrics: loss=0.9914
+
+[Server] Round 17/20 | selected=['1']
+[Client1] Final: loss=0.2135 acc=1.0000                                                                                 
+[Server] Round 17 global metrics: loss=0.2135
+
+[Server] Round 18/20 | selected=['1']
+[Client1] Final: loss=0.9158 acc=0.5000                                                                                 
+[Server] Round 18 global metrics: loss=0.9158
+
+[Server] Round 19/20 | selected=['1']
+[Client1] Final: loss=0.6157 acc=0.7500                                                                                 
+[Server] Round 19 global metrics: loss=0.6157
+
+[Server] Round 20/20 | selected=['1']
+[Client1] Final: loss=0.8337 acc=0.7500                                                                                 
+[Server] Round 20 global metrics: loss=0.8337
+
+[Server] 训练完成！最终模型已保存到: FedVideomae_DP/runs/linear_probe_rwf2000/model_final.pth
+
+=== Final Model Evaluation ===
+Accuracy: 0.6519
+Precision (Weighted): 0.6527
+Recall (Weighted): 0.6519
+F1-Score (Weighted): 0.6514
+Precision (Macro): 0.6527
+Recall (Macro): 0.6519
+F1-Score (Macro): 0.6514
+ROC-AUC: 0.7132
+Average Precision: 0.6835
+
+Confusion Matrix:
+         Predicted
+         NonFight  Fight
+Actual NonFight    551    249
+       Fight        308    492

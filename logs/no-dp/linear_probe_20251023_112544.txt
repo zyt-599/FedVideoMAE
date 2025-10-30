@@ -1,0 +1,42 @@
+=== Task: linear_probe ===
+timestamp: 20251023_112544
+[Init] Using pretrained checkpoint: FedVideomae_DP/runs/pretrain_rwf2000_no_dp/model_final.pth | sha256=d7d3936bbfb9d625
+[Warn] Missing keys when loading pretrained weights: 20
+[Warn] Unexpected keys when loading pretrained weights: 3
+Loaded pretrained weights from FedVideomae_DP/runs/pretrain_rwf2000_no_dp/model_final.pth
+[Init] Loaded PEFT trainable: matched=200/203
+[Init] LoRA fingerprint: keys=200 elems=3145728 sha256=e659bcc43a729c64
+[Init] class_weights=unweighted
+[Train] epoch=1 loss=0.793623 acc=0.616875 f1_macro=0.616832 f1_weighted=0.616832 precision_macro=0.616928 recall_macro=0.616875
+[Train] epoch=2 loss=0.603316 acc=0.686875 f1_macro=0.686649 f1_weighted=0.686649 precision_macro=0.687416 recall_macro=0.686875
+[Train] epoch=3 loss=0.617518 acc=0.678750 f1_macro=0.678745 f1_weighted=0.678745 precision_macro=0.678760 recall_macro=0.678750
+[Train] epoch=4 loss=0.603709 acc=0.695625 f1_macro=0.695622 f1_weighted=0.695622 precision_macro=0.695633 recall_macro=0.695625
+[Train] epoch=5 loss=0.573914 acc=0.701250 f1_macro=0.701250 f1_weighted=0.701250 precision_macro=0.701250 recall_macro=0.701250
+[Train] epoch=6 loss=0.639717 acc=0.685625 f1_macro=0.685622 f1_weighted=0.685622 precision_macro=0.685632 recall_macro=0.685625
+[Train] epoch=7 loss=0.570434 acc=0.708750 f1_macro=0.708661 f1_weighted=0.708661 precision_macro=0.709006 recall_macro=0.708750
+[Train] epoch=8 loss=0.574353 acc=0.724375 f1_macro=0.724370 f1_weighted=0.724370 precision_macro=0.724392 recall_macro=0.724375
+[Train] epoch=9 loss=0.616217 acc=0.711875 f1_macro=0.711872 f1_weighted=0.711872 precision_macro=0.711883 recall_macro=0.711875
+[Train] epoch=10 loss=0.596358 acc=0.704375 f1_macro=0.704342 f1_weighted=0.704342 precision_macro=0.704467 recall_macro=0.704375
+[Train] epoch=11 loss=0.562891 acc=0.726875 f1_macro=0.726874 f1_weighted=0.726874 precision_macro=0.726878 recall_macro=0.726875
+[Train] epoch=12 loss=0.618761 acc=0.698750 f1_macro=0.698746 f1_weighted=0.698746 precision_macro=0.698761 recall_macro=0.698750
+[Train] epoch=13 loss=0.521751 acc=0.754375 f1_macro=0.754375 f1_weighted=0.754375 precision_macro=0.754375 recall_macro=0.754375
+[Train] epoch=14 loss=0.587498 acc=0.719375 f1_macro=0.719362 f1_weighted=0.719362 precision_macro=0.719416 recall_macro=0.719375
+[Train] epoch=15 loss=0.505403 acc=0.750625 f1_macro=0.750620 f1_weighted=0.750620 precision_macro=0.750644 recall_macro=0.750625
+[Train] epoch=16 loss=0.520418 acc=0.755000 f1_macro=0.754994 f1_weighted=0.754994 precision_macro=0.755026 recall_macro=0.755000
+[Train] epoch=17 loss=0.525782 acc=0.766875 f1_macro=0.766874 f1_weighted=0.766874 precision_macro=0.766879 recall_macro=0.766875
+[Train] epoch=18 loss=0.540367 acc=0.738750 f1_macro=0.738743 f1_weighted=0.738743 precision_macro=0.738774 recall_macro=0.738750
+[Train] epoch=19 loss=0.525918 acc=0.740000 f1_macro=0.739998 f1_weighted=0.739998 precision_macro=0.740006 recall_macro=0.740000
+[Train] epoch=20 loss=0.523872 acc=0.742500 f1_macro=0.742474 f1_weighted=0.742474 precision_macro=0.742597 recall_macro=0.742500
+metrics:
+accuracy: 0.710000
+precision_weighted: 0.713610
+recall_weighted: 0.710000
+f1_weighted: 0.708770
+precision_macro: 0.713610
+recall_macro: 0.710000
+f1_macro: 0.708770
+roc_auc: 0.801450
+average_precision: 0.776091
+confusion_matrix:
+129 71
+45 155

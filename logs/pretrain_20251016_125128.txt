@@ -1,0 +1,223 @@
+=== Task: pretrain (server) ===
+timestamp: 20251016_125128
+config:
+rounds: 200
+clients_per_round: 40
+local_epochs: 4
+optimizer:
+  lr: 0.0002
+  weight_decay: 0.01
+batch_size: 32
+num_workers: 8
+use_amp: true
+dp:
+  enabled: true
+  target_epsilon: 10
+  target_delta: 1.0e-05
+  noise_multiplier: null
+  max_grad_norm: 1.0
+secure_aggregation:
+  enabled: true
+  threshold: 21
+server_noise_scale: 0.0
+[Round 1] global metrics: loss=1.7200 pixel_mse=1.7196 token_norm=24.2379 max_token_norm=25.1684 privacy_epsilon=0.2946 privacy_epsilon_cum=0.5171 privacy_epsilon_inc=0.5171 privacy_delta=1.0e-05
+[Round 2] global metrics: loss=1.7199 pixel_mse=1.7195 token_norm=24.2367 max_token_norm=25.1672 privacy_epsilon=0.2946 privacy_epsilon_cum=0.7562 privacy_epsilon_inc=0.2391 privacy_delta=1.0e-05
+[Round 3] global metrics: loss=1.7189 pixel_mse=1.7185 token_norm=24.2331 max_token_norm=25.1647 privacy_epsilon=0.2946 privacy_epsilon_cum=0.9358 privacy_epsilon_inc=0.1796 privacy_delta=1.0e-05
+[Round 4] global metrics: loss=1.7197 pixel_mse=1.7193 token_norm=24.2307 max_token_norm=25.1641 privacy_epsilon=0.2946 privacy_epsilon_cum=1.0917 privacy_epsilon_inc=0.1558 privacy_delta=1.0e-05
+[Round 5] global metrics: loss=1.7195 pixel_mse=1.7191 token_norm=24.2287 max_token_norm=25.1601 privacy_epsilon=0.2946 privacy_epsilon_cum=1.2351 privacy_epsilon_inc=0.1434 privacy_delta=1.0e-05
+[Round 6] global metrics: loss=1.7200 pixel_mse=1.7196 token_norm=24.2294 max_token_norm=25.1601 privacy_epsilon=0.2946 privacy_epsilon_cum=1.3604 privacy_epsilon_inc=0.1254 privacy_delta=1.0e-05
+[Round 7] global metrics: loss=1.7193 pixel_mse=1.7189 token_norm=24.2264 max_token_norm=25.1603 privacy_epsilon=0.2946 privacy_epsilon_cum=1.4848 privacy_epsilon_inc=0.1244 privacy_delta=1.0e-05
+[Round 8] global metrics: loss=1.7194 pixel_mse=1.7190 token_norm=24.2229 max_token_norm=25.1561 privacy_epsilon=0.2946 privacy_epsilon_cum=1.5921 privacy_epsilon_inc=0.1073 privacy_delta=1.0e-05
+[Round 9] global metrics: loss=1.7183 pixel_mse=1.7179 token_norm=24.2227 max_token_norm=25.1563 privacy_epsilon=0.2946 privacy_epsilon_cum=1.6994 privacy_epsilon_inc=0.1073 privacy_delta=1.0e-05
+[Round 10] global metrics: loss=1.7189 pixel_mse=1.7185 token_norm=24.2207 max_token_norm=25.1548 privacy_epsilon=0.2946 privacy_epsilon_cum=1.8067 privacy_epsilon_inc=0.1073 privacy_delta=1.0e-05
+[Round 11] global metrics: loss=1.7186 pixel_mse=1.7182 token_norm=24.2208 max_token_norm=25.1538 privacy_epsilon=0.2946 privacy_epsilon_cum=1.9005 privacy_epsilon_inc=0.0938 privacy_delta=1.0e-05
+[Round 12] global metrics: loss=1.7177 pixel_mse=1.7173 token_norm=24.2179 max_token_norm=25.1508 privacy_epsilon=0.2946 privacy_epsilon_cum=1.9898 privacy_epsilon_inc=0.0893 privacy_delta=1.0e-05
+[Round 13] global metrics: loss=1.7191 pixel_mse=1.7187 token_norm=24.2172 max_token_norm=25.1538 privacy_epsilon=0.2946 privacy_epsilon_cum=2.0791 privacy_epsilon_inc=0.0893 privacy_delta=1.0e-05
+[Round 14] global metrics: loss=1.7191 pixel_mse=1.7187 token_norm=24.2146 max_token_norm=25.1492 privacy_epsilon=0.2946 privacy_epsilon_cum=2.1685 privacy_epsilon_inc=0.0893 privacy_delta=1.0e-05
+[Round 15] global metrics: loss=1.7182 pixel_mse=1.7178 token_norm=24.2125 max_token_norm=25.1489 privacy_epsilon=0.2946 privacy_epsilon_cum=2.2578 privacy_epsilon_inc=0.0893 privacy_delta=1.0e-05
+[Round 16] global metrics: loss=1.7182 pixel_mse=1.7178 token_norm=24.2106 max_token_norm=25.1461 privacy_epsilon=0.2946 privacy_epsilon_cum=2.3471 privacy_epsilon_inc=0.0893 privacy_delta=1.0e-05
+[Round 17] global metrics: loss=1.7183 pixel_mse=1.7179 token_norm=24.2082 max_token_norm=25.1450 privacy_epsilon=0.2946 privacy_epsilon_cum=2.4275 privacy_epsilon_inc=0.0804 privacy_delta=1.0e-05
+[Round 18] global metrics: loss=1.7183 pixel_mse=1.7179 token_norm=24.2061 max_token_norm=25.1419 privacy_epsilon=0.2946 privacy_epsilon_cum=2.4989 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 19] global metrics: loss=1.7180 pixel_mse=1.7176 token_norm=24.2042 max_token_norm=25.1401 privacy_epsilon=0.2946 privacy_epsilon_cum=2.5702 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 20] global metrics: loss=1.7182 pixel_mse=1.7178 token_norm=24.2026 max_token_norm=25.1400 privacy_epsilon=0.2946 privacy_epsilon_cum=2.6416 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 21] global metrics: loss=1.7182 pixel_mse=1.7178 token_norm=24.2017 max_token_norm=25.1365 privacy_epsilon=0.2946 privacy_epsilon_cum=2.7130 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 22] global metrics: loss=1.7175 pixel_mse=1.7171 token_norm=24.2004 max_token_norm=25.1366 privacy_epsilon=0.2946 privacy_epsilon_cum=2.7844 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 23] global metrics: loss=1.7176 pixel_mse=1.7172 token_norm=24.1969 max_token_norm=25.1311 privacy_epsilon=0.2946 privacy_epsilon_cum=2.8557 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 24] global metrics: loss=1.7183 pixel_mse=1.7179 token_norm=24.1965 max_token_norm=25.1323 privacy_epsilon=0.2946 privacy_epsilon_cum=2.9271 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 25] global metrics: loss=1.7190 pixel_mse=1.7186 token_norm=24.1938 max_token_norm=25.1288 privacy_epsilon=0.2946 privacy_epsilon_cum=2.9985 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 26] global metrics: loss=1.7188 pixel_mse=1.7185 token_norm=24.1933 max_token_norm=25.1271 privacy_epsilon=0.2946 privacy_epsilon_cum=3.0699 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 27] global metrics: loss=1.7176 pixel_mse=1.7172 token_norm=24.1907 max_token_norm=25.1264 privacy_epsilon=0.2946 privacy_epsilon_cum=3.1412 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 28] global metrics: loss=1.7183 pixel_mse=1.7179 token_norm=24.1892 max_token_norm=25.1256 privacy_epsilon=0.2946 privacy_epsilon_cum=3.2126 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 29] global metrics: loss=1.7173 pixel_mse=1.7169 token_norm=24.1876 max_token_norm=25.1231 privacy_epsilon=0.2946 privacy_epsilon_cum=3.2840 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 30] global metrics: loss=1.7179 pixel_mse=1.7175 token_norm=24.1857 max_token_norm=25.1213 privacy_epsilon=0.2946 privacy_epsilon_cum=3.3554 privacy_epsilon_inc=0.0714 privacy_delta=1.0e-05
+[Round 31] global metrics: loss=1.7173 pixel_mse=1.7169 token_norm=24.1851 max_token_norm=25.1208 privacy_epsilon=0.2946 privacy_epsilon_cum=3.4195 privacy_epsilon_inc=0.0642 privacy_delta=1.0e-05
+[Round 32] global metrics: loss=1.7169 pixel_mse=1.7165 token_norm=24.1825 max_token_norm=25.1178 privacy_epsilon=0.2946 privacy_epsilon_cum=3.4730 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 33] global metrics: loss=1.7185 pixel_mse=1.7181 token_norm=24.1818 max_token_norm=25.1167 privacy_epsilon=0.2946 privacy_epsilon_cum=3.5265 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 34] global metrics: loss=1.7177 pixel_mse=1.7173 token_norm=24.1802 max_token_norm=25.1166 privacy_epsilon=0.2946 privacy_epsilon_cum=3.5800 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 35] global metrics: loss=1.7169 pixel_mse=1.7165 token_norm=24.1787 max_token_norm=25.1171 privacy_epsilon=0.2946 privacy_epsilon_cum=3.6334 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 36] global metrics: loss=1.7172 pixel_mse=1.7168 token_norm=24.1760 max_token_norm=25.1133 privacy_epsilon=0.2946 privacy_epsilon_cum=3.6869 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 37] global metrics: loss=1.7175 pixel_mse=1.7171 token_norm=24.1747 max_token_norm=25.1111 privacy_epsilon=0.2946 privacy_epsilon_cum=3.7404 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 38] global metrics: loss=1.7167 pixel_mse=1.7163 token_norm=24.1735 max_token_norm=25.1109 privacy_epsilon=0.2946 privacy_epsilon_cum=3.7938 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 39] global metrics: loss=1.7172 pixel_mse=1.7168 token_norm=24.1715 max_token_norm=25.1103 privacy_epsilon=0.2946 privacy_epsilon_cum=3.8473 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 40] global metrics: loss=1.7173 pixel_mse=1.7170 token_norm=24.1691 max_token_norm=25.1089 privacy_epsilon=0.2946 privacy_epsilon_cum=3.9008 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 41] global metrics: loss=1.7166 pixel_mse=1.7163 token_norm=24.1679 max_token_norm=25.1071 privacy_epsilon=0.2946 privacy_epsilon_cum=3.9543 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 42] global metrics: loss=1.7167 pixel_mse=1.7163 token_norm=24.1656 max_token_norm=25.1051 privacy_epsilon=0.2946 privacy_epsilon_cum=4.0077 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 43] global metrics: loss=1.7169 pixel_mse=1.7165 token_norm=24.1639 max_token_norm=25.1058 privacy_epsilon=0.2946 privacy_epsilon_cum=4.0612 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 44] global metrics: loss=1.7175 pixel_mse=1.7171 token_norm=24.1624 max_token_norm=25.1051 privacy_epsilon=0.2946 privacy_epsilon_cum=4.1147 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 45] global metrics: loss=1.7167 pixel_mse=1.7163 token_norm=24.1607 max_token_norm=25.1034 privacy_epsilon=0.2946 privacy_epsilon_cum=4.1681 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 46] global metrics: loss=1.7165 pixel_mse=1.7162 token_norm=24.1591 max_token_norm=25.0999 privacy_epsilon=0.2946 privacy_epsilon_cum=4.2216 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 47] global metrics: loss=1.7163 pixel_mse=1.7159 token_norm=24.1578 max_token_norm=25.0994 privacy_epsilon=0.2946 privacy_epsilon_cum=4.2751 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 48] global metrics: loss=1.7161 pixel_mse=1.7157 token_norm=24.1556 max_token_norm=25.0962 privacy_epsilon=0.2946 privacy_epsilon_cum=4.3286 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 49] global metrics: loss=1.7161 pixel_mse=1.7157 token_norm=24.1548 max_token_norm=25.0974 privacy_epsilon=0.2946 privacy_epsilon_cum=4.3820 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 50] global metrics: loss=1.7163 pixel_mse=1.7160 token_norm=24.1521 max_token_norm=25.0963 privacy_epsilon=0.2946 privacy_epsilon_cum=4.4355 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 51] global metrics: loss=1.7165 pixel_mse=1.7161 token_norm=24.1509 max_token_norm=25.0934 privacy_epsilon=0.2946 privacy_epsilon_cum=4.4890 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 52] global metrics: loss=1.7167 pixel_mse=1.7163 token_norm=24.1484 max_token_norm=25.0926 privacy_epsilon=0.2946 privacy_epsilon_cum=4.5425 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 53] global metrics: loss=1.7157 pixel_mse=1.7154 token_norm=24.1474 max_token_norm=25.0888 privacy_epsilon=0.2946 privacy_epsilon_cum=4.5959 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 54] global metrics: loss=1.7164 pixel_mse=1.7160 token_norm=24.1453 max_token_norm=25.0887 privacy_epsilon=0.2946 privacy_epsilon_cum=4.6494 privacy_epsilon_inc=0.0535 privacy_delta=1.0e-05
+[Round 55] global metrics: loss=1.7164 pixel_mse=1.7160 token_norm=24.1441 max_token_norm=25.0858 privacy_epsilon=0.2946 privacy_epsilon_cum=4.7022 privacy_epsilon_inc=0.0528 privacy_delta=1.0e-05
+[Round 56] global metrics: loss=1.7162 pixel_mse=1.7158 token_norm=24.1416 max_token_norm=25.0845 privacy_epsilon=0.2946 privacy_epsilon_cum=4.7467 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 57] global metrics: loss=1.7164 pixel_mse=1.7160 token_norm=24.1399 max_token_norm=25.0853 privacy_epsilon=0.2946 privacy_epsilon_cum=4.7912 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 58] global metrics: loss=1.7160 pixel_mse=1.7156 token_norm=24.1379 max_token_norm=25.0823 privacy_epsilon=0.2946 privacy_epsilon_cum=4.8358 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 59] global metrics: loss=1.7152 pixel_mse=1.7148 token_norm=24.1368 max_token_norm=25.0820 privacy_epsilon=0.2946 privacy_epsilon_cum=4.8803 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 60] global metrics: loss=1.7156 pixel_mse=1.7152 token_norm=24.1347 max_token_norm=25.0785 privacy_epsilon=0.2946 privacy_epsilon_cum=4.9248 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 61] global metrics: loss=1.7156 pixel_mse=1.7152 token_norm=24.1321 max_token_norm=25.0759 privacy_epsilon=0.2946 privacy_epsilon_cum=4.9694 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 62] global metrics: loss=1.7149 pixel_mse=1.7145 token_norm=24.1302 max_token_norm=25.0776 privacy_epsilon=0.2946 privacy_epsilon_cum=5.0139 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 63] global metrics: loss=1.7148 pixel_mse=1.7144 token_norm=24.1303 max_token_norm=25.0756 privacy_epsilon=0.2946 privacy_epsilon_cum=5.0584 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 64] global metrics: loss=1.7159 pixel_mse=1.7156 token_norm=24.1278 max_token_norm=25.0727 privacy_epsilon=0.2946 privacy_epsilon_cum=5.1030 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 65] global metrics: loss=1.7150 pixel_mse=1.7146 token_norm=24.1264 max_token_norm=25.0726 privacy_epsilon=0.2946 privacy_epsilon_cum=5.1475 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 66] global metrics: loss=1.7154 pixel_mse=1.7151 token_norm=24.1245 max_token_norm=25.0719 privacy_epsilon=0.2946 privacy_epsilon_cum=5.1921 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 67] global metrics: loss=1.7151 pixel_mse=1.7147 token_norm=24.1224 max_token_norm=25.0692 privacy_epsilon=0.2946 privacy_epsilon_cum=5.2366 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 68] global metrics: loss=1.7156 pixel_mse=1.7152 token_norm=24.1204 max_token_norm=25.0699 privacy_epsilon=0.2946 privacy_epsilon_cum=5.2811 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 69] global metrics: loss=1.7148 pixel_mse=1.7145 token_norm=24.1199 max_token_norm=25.0692 privacy_epsilon=0.2946 privacy_epsilon_cum=5.3257 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 70] global metrics: loss=1.7144 pixel_mse=1.7140 token_norm=24.1174 max_token_norm=25.0663 privacy_epsilon=0.2946 privacy_epsilon_cum=5.3702 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 71] global metrics: loss=1.7136 pixel_mse=1.7132 token_norm=24.1164 max_token_norm=25.0660 privacy_epsilon=0.2946 privacy_epsilon_cum=5.4147 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 72] global metrics: loss=1.7144 pixel_mse=1.7140 token_norm=24.1153 max_token_norm=25.0643 privacy_epsilon=0.2946 privacy_epsilon_cum=5.4593 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 73] global metrics: loss=1.7143 pixel_mse=1.7139 token_norm=24.1138 max_token_norm=25.0643 privacy_epsilon=0.2946 privacy_epsilon_cum=5.5038 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 74] global metrics: loss=1.7145 pixel_mse=1.7141 token_norm=24.1130 max_token_norm=25.0631 privacy_epsilon=0.2946 privacy_epsilon_cum=5.5483 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 75] global metrics: loss=1.7144 pixel_mse=1.7141 token_norm=24.1106 max_token_norm=25.0617 privacy_epsilon=0.2946 privacy_epsilon_cum=5.5929 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 76] global metrics: loss=1.7139 pixel_mse=1.7135 token_norm=24.1105 max_token_norm=25.0613 privacy_epsilon=0.2946 privacy_epsilon_cum=5.6374 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 77] global metrics: loss=1.7141 pixel_mse=1.7138 token_norm=24.1082 max_token_norm=25.0589 privacy_epsilon=0.2946 privacy_epsilon_cum=5.6819 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 78] global metrics: loss=1.7141 pixel_mse=1.7137 token_norm=24.1055 max_token_norm=25.0588 privacy_epsilon=0.2946 privacy_epsilon_cum=5.7265 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 79] global metrics: loss=1.7142 pixel_mse=1.7138 token_norm=24.1033 max_token_norm=25.0557 privacy_epsilon=0.2946 privacy_epsilon_cum=5.7710 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 80] global metrics: loss=1.7142 pixel_mse=1.7138 token_norm=24.1039 max_token_norm=25.0563 privacy_epsilon=0.2946 privacy_epsilon_cum=5.8155 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 81] global metrics: loss=1.7144 pixel_mse=1.7141 token_norm=24.1014 max_token_norm=25.0536 privacy_epsilon=0.2946 privacy_epsilon_cum=5.8601 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 82] global metrics: loss=1.7143 pixel_mse=1.7139 token_norm=24.0995 max_token_norm=25.0529 privacy_epsilon=0.2946 privacy_epsilon_cum=5.9046 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 83] global metrics: loss=1.7142 pixel_mse=1.7138 token_norm=24.1000 max_token_norm=25.0531 privacy_epsilon=0.2946 privacy_epsilon_cum=5.9492 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 84] global metrics: loss=1.7140 pixel_mse=1.7137 token_norm=24.0976 max_token_norm=25.0511 privacy_epsilon=0.2946 privacy_epsilon_cum=5.9937 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 85] global metrics: loss=1.7133 pixel_mse=1.7129 token_norm=24.0954 max_token_norm=25.0481 privacy_epsilon=0.2946 privacy_epsilon_cum=6.0382 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 86] global metrics: loss=1.7149 pixel_mse=1.7145 token_norm=24.0936 max_token_norm=25.0474 privacy_epsilon=0.2946 privacy_epsilon_cum=6.0828 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 87] global metrics: loss=1.7142 pixel_mse=1.7138 token_norm=24.0919 max_token_norm=25.0446 privacy_epsilon=0.2946 privacy_epsilon_cum=6.1273 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 88] global metrics: loss=1.7141 pixel_mse=1.7138 token_norm=24.0895 max_token_norm=25.0420 privacy_epsilon=0.2946 privacy_epsilon_cum=6.1718 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 89] global metrics: loss=1.7143 pixel_mse=1.7139 token_norm=24.0889 max_token_norm=25.0404 privacy_epsilon=0.2946 privacy_epsilon_cum=6.2164 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 90] global metrics: loss=1.7134 pixel_mse=1.7131 token_norm=24.0882 max_token_norm=25.0398 privacy_epsilon=0.2946 privacy_epsilon_cum=6.2609 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 91] global metrics: loss=1.7136 pixel_mse=1.7132 token_norm=24.0855 max_token_norm=25.0386 privacy_epsilon=0.2946 privacy_epsilon_cum=6.3054 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 92] global metrics: loss=1.7133 pixel_mse=1.7129 token_norm=24.0834 max_token_norm=25.0378 privacy_epsilon=0.2946 privacy_epsilon_cum=6.3500 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 93] global metrics: loss=1.7127 pixel_mse=1.7123 token_norm=24.0815 max_token_norm=25.0355 privacy_epsilon=0.2946 privacy_epsilon_cum=6.3945 privacy_epsilon_inc=0.0445 privacy_delta=1.0e-05
+[Round 94] global metrics: loss=1.7142 pixel_mse=1.7138 token_norm=24.0798 max_token_norm=25.0343 privacy_epsilon=0.2946 privacy_epsilon_cum=6.4351 privacy_epsilon_inc=0.0406 privacy_delta=1.0e-05
+[Round 95] global metrics: loss=1.7134 pixel_mse=1.7131 token_norm=24.0781 max_token_norm=25.0325 privacy_epsilon=0.2946 privacy_epsilon_cum=6.4707 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 96] global metrics: loss=1.7136 pixel_mse=1.7132 token_norm=24.0762 max_token_norm=25.0317 privacy_epsilon=0.2946 privacy_epsilon_cum=6.5063 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 97] global metrics: loss=1.7124 pixel_mse=1.7120 token_norm=24.0755 max_token_norm=25.0291 privacy_epsilon=0.2946 privacy_epsilon_cum=6.5419 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 98] global metrics: loss=1.7134 pixel_mse=1.7130 token_norm=24.0739 max_token_norm=25.0285 privacy_epsilon=0.2946 privacy_epsilon_cum=6.5775 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 99] global metrics: loss=1.7128 pixel_mse=1.7125 token_norm=24.0724 max_token_norm=25.0271 privacy_epsilon=0.2946 privacy_epsilon_cum=6.6131 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 100] global metrics: loss=1.7122 pixel_mse=1.7118 token_norm=24.0695 max_token_norm=25.0233 privacy_epsilon=0.2946 privacy_epsilon_cum=6.6487 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 101] global metrics: loss=1.7130 pixel_mse=1.7126 token_norm=24.0688 max_token_norm=25.0248 privacy_epsilon=0.2946 privacy_epsilon_cum=6.6843 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 102] global metrics: loss=1.7131 pixel_mse=1.7127 token_norm=24.0669 max_token_norm=25.0226 privacy_epsilon=0.2946 privacy_epsilon_cum=6.7199 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 103] global metrics: loss=1.7129 pixel_mse=1.7125 token_norm=24.0642 max_token_norm=25.0231 privacy_epsilon=0.2946 privacy_epsilon_cum=6.7555 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 104] global metrics: loss=1.7131 pixel_mse=1.7127 token_norm=24.0625 max_token_norm=25.0210 privacy_epsilon=0.2946 privacy_epsilon_cum=6.7911 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 105] global metrics: loss=1.7120 pixel_mse=1.7116 token_norm=24.0625 max_token_norm=25.0207 privacy_epsilon=0.2946 privacy_epsilon_cum=6.8267 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 106] global metrics: loss=1.7120 pixel_mse=1.7116 token_norm=24.0594 max_token_norm=25.0173 privacy_epsilon=0.2946 privacy_epsilon_cum=6.8624 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 107] global metrics: loss=1.7126 pixel_mse=1.7122 token_norm=24.0587 max_token_norm=25.0169 privacy_epsilon=0.2946 privacy_epsilon_cum=6.8980 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 108] global metrics: loss=1.7124 pixel_mse=1.7120 token_norm=24.0569 max_token_norm=25.0167 privacy_epsilon=0.2946 privacy_epsilon_cum=6.9336 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 109] global metrics: loss=1.7120 pixel_mse=1.7116 token_norm=24.0543 max_token_norm=25.0139 privacy_epsilon=0.2946 privacy_epsilon_cum=6.9692 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 110] global metrics: loss=1.7119 pixel_mse=1.7115 token_norm=24.0539 max_token_norm=25.0119 privacy_epsilon=0.2946 privacy_epsilon_cum=7.0048 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 111] global metrics: loss=1.7115 pixel_mse=1.7112 token_norm=24.0523 max_token_norm=25.0131 privacy_epsilon=0.2946 privacy_epsilon_cum=7.0404 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 112] global metrics: loss=1.7123 pixel_mse=1.7119 token_norm=24.0509 max_token_norm=25.0080 privacy_epsilon=0.2946 privacy_epsilon_cum=7.0760 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 113] global metrics: loss=1.7122 pixel_mse=1.7118 token_norm=24.0494 max_token_norm=25.0091 privacy_epsilon=0.2946 privacy_epsilon_cum=7.1116 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 114] global metrics: loss=1.7114 pixel_mse=1.7110 token_norm=24.0484 max_token_norm=25.0076 privacy_epsilon=0.2946 privacy_epsilon_cum=7.1472 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 115] global metrics: loss=1.7126 pixel_mse=1.7122 token_norm=24.0459 max_token_norm=25.0071 privacy_epsilon=0.2946 privacy_epsilon_cum=7.1828 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 116] global metrics: loss=1.7112 pixel_mse=1.7109 token_norm=24.0441 max_token_norm=25.0064 privacy_epsilon=0.2946 privacy_epsilon_cum=7.2184 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 117] global metrics: loss=1.7123 pixel_mse=1.7119 token_norm=24.0435 max_token_norm=25.0056 privacy_epsilon=0.2946 privacy_epsilon_cum=7.2541 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 118] global metrics: loss=1.7125 pixel_mse=1.7121 token_norm=24.0418 max_token_norm=25.0032 privacy_epsilon=0.2946 privacy_epsilon_cum=7.2897 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 119] global metrics: loss=1.7118 pixel_mse=1.7114 token_norm=24.0383 max_token_norm=25.0010 privacy_epsilon=0.2946 privacy_epsilon_cum=7.3253 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 120] global metrics: loss=1.7115 pixel_mse=1.7112 token_norm=24.0367 max_token_norm=25.0013 privacy_epsilon=0.2946 privacy_epsilon_cum=7.3609 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 121] global metrics: loss=1.7118 pixel_mse=1.7114 token_norm=24.0363 max_token_norm=24.9984 privacy_epsilon=0.2946 privacy_epsilon_cum=7.3965 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 122] global metrics: loss=1.7114 pixel_mse=1.7110 token_norm=24.0351 max_token_norm=24.9995 privacy_epsilon=0.2946 privacy_epsilon_cum=7.4321 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 123] global metrics: loss=1.7112 pixel_mse=1.7108 token_norm=24.0338 max_token_norm=24.9995 privacy_epsilon=0.2946 privacy_epsilon_cum=7.4677 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 124] global metrics: loss=1.7109 pixel_mse=1.7105 token_norm=24.0328 max_token_norm=24.9976 privacy_epsilon=0.2946 privacy_epsilon_cum=7.5033 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 125] global metrics: loss=1.7119 pixel_mse=1.7116 token_norm=24.0313 max_token_norm=24.9956 privacy_epsilon=0.2946 privacy_epsilon_cum=7.5389 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 126] global metrics: loss=1.7113 pixel_mse=1.7109 token_norm=24.0282 max_token_norm=24.9919 privacy_epsilon=0.2946 privacy_epsilon_cum=7.5745 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 127] global metrics: loss=1.7114 pixel_mse=1.7110 token_norm=24.0274 max_token_norm=24.9920 privacy_epsilon=0.2946 privacy_epsilon_cum=7.6101 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 128] global metrics: loss=1.7106 pixel_mse=1.7102 token_norm=24.0250 max_token_norm=24.9886 privacy_epsilon=0.2946 privacy_epsilon_cum=7.6457 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 129] global metrics: loss=1.7116 pixel_mse=1.7113 token_norm=24.0235 max_token_norm=24.9901 privacy_epsilon=0.2946 privacy_epsilon_cum=7.6814 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 130] global metrics: loss=1.7118 pixel_mse=1.7114 token_norm=24.0223 max_token_norm=24.9870 privacy_epsilon=0.2946 privacy_epsilon_cum=7.7170 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 131] global metrics: loss=1.7111 pixel_mse=1.7108 token_norm=24.0206 max_token_norm=24.9869 privacy_epsilon=0.2946 privacy_epsilon_cum=7.7526 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 132] global metrics: loss=1.7114 pixel_mse=1.7110 token_norm=24.0191 max_token_norm=24.9847 privacy_epsilon=0.2946 privacy_epsilon_cum=7.7882 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 133] global metrics: loss=1.7104 pixel_mse=1.7100 token_norm=24.0162 max_token_norm=24.9802 privacy_epsilon=0.2946 privacy_epsilon_cum=7.8238 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 134] global metrics: loss=1.7105 pixel_mse=1.7101 token_norm=24.0160 max_token_norm=24.9819 privacy_epsilon=0.2946 privacy_epsilon_cum=7.8594 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 135] global metrics: loss=1.7103 pixel_mse=1.7100 token_norm=24.0143 max_token_norm=24.9800 privacy_epsilon=0.2946 privacy_epsilon_cum=7.8950 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 136] global metrics: loss=1.7100 pixel_mse=1.7097 token_norm=24.0119 max_token_norm=24.9774 privacy_epsilon=0.2946 privacy_epsilon_cum=7.9306 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 137] global metrics: loss=1.7108 pixel_mse=1.7104 token_norm=24.0110 max_token_norm=24.9775 privacy_epsilon=0.2946 privacy_epsilon_cum=7.9662 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 138] global metrics: loss=1.7103 pixel_mse=1.7100 token_norm=24.0100 max_token_norm=24.9757 privacy_epsilon=0.2946 privacy_epsilon_cum=8.0018 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 139] global metrics: loss=1.7120 pixel_mse=1.7116 token_norm=24.0073 max_token_norm=24.9742 privacy_epsilon=0.2946 privacy_epsilon_cum=8.0374 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 140] global metrics: loss=1.7106 pixel_mse=1.7102 token_norm=24.0063 max_token_norm=24.9739 privacy_epsilon=0.2946 privacy_epsilon_cum=8.0730 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 141] global metrics: loss=1.7102 pixel_mse=1.7098 token_norm=24.0052 max_token_norm=24.9710 privacy_epsilon=0.2946 privacy_epsilon_cum=8.1087 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 142] global metrics: loss=1.7106 pixel_mse=1.7102 token_norm=24.0044 max_token_norm=24.9698 privacy_epsilon=0.2946 privacy_epsilon_cum=8.1443 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 143] global metrics: loss=1.7106 pixel_mse=1.7102 token_norm=24.0019 max_token_norm=24.9686 privacy_epsilon=0.2946 privacy_epsilon_cum=8.1799 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 144] global metrics: loss=1.7089 pixel_mse=1.7085 token_norm=24.0015 max_token_norm=24.9680 privacy_epsilon=0.2946 privacy_epsilon_cum=8.2155 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 145] global metrics: loss=1.7099 pixel_mse=1.7095 token_norm=23.9989 max_token_norm=24.9660 privacy_epsilon=0.2946 privacy_epsilon_cum=8.2511 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 146] global metrics: loss=1.7092 pixel_mse=1.7089 token_norm=23.9974 max_token_norm=24.9649 privacy_epsilon=0.2946 privacy_epsilon_cum=8.2867 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 147] global metrics: loss=1.7092 pixel_mse=1.7088 token_norm=23.9947 max_token_norm=24.9591 privacy_epsilon=0.2946 privacy_epsilon_cum=8.3223 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 148] global metrics: loss=1.7103 pixel_mse=1.7100 token_norm=23.9927 max_token_norm=24.9576 privacy_epsilon=0.2946 privacy_epsilon_cum=8.3579 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 149] global metrics: loss=1.7097 pixel_mse=1.7093 token_norm=23.9906 max_token_norm=24.9568 privacy_epsilon=0.2946 privacy_epsilon_cum=8.3935 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 150] global metrics: loss=1.7098 pixel_mse=1.7094 token_norm=23.9899 max_token_norm=24.9552 privacy_epsilon=0.2946 privacy_epsilon_cum=8.4291 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 151] global metrics: loss=1.7090 pixel_mse=1.7086 token_norm=23.9872 max_token_norm=24.9521 privacy_epsilon=0.2946 privacy_epsilon_cum=8.4647 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 152] global metrics: loss=1.7091 pixel_mse=1.7087 token_norm=23.9861 max_token_norm=24.9525 privacy_epsilon=0.2946 privacy_epsilon_cum=8.5003 privacy_epsilon_inc=0.0356 privacy_delta=1.0e-05
+[Round 153] global metrics: loss=1.7095 pixel_mse=1.7091 token_norm=23.9849 max_token_norm=24.9490 privacy_epsilon=0.2946 privacy_epsilon_cum=8.5334 privacy_epsilon_inc=0.0330 privacy_delta=1.0e-05
+[Round 154] global metrics: loss=1.7092 pixel_mse=1.7088 token_norm=23.9848 max_token_norm=24.9509 privacy_epsilon=0.2946 privacy_epsilon_cum=8.5645 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 155] global metrics: loss=1.7105 pixel_mse=1.7101 token_norm=23.9837 max_token_norm=24.9498 privacy_epsilon=0.2946 privacy_epsilon_cum=8.5957 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 156] global metrics: loss=1.7097 pixel_mse=1.7094 token_norm=23.9819 max_token_norm=24.9465 privacy_epsilon=0.2946 privacy_epsilon_cum=8.6268 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 157] global metrics: loss=1.7092 pixel_mse=1.7088 token_norm=23.9791 max_token_norm=24.9474 privacy_epsilon=0.2946 privacy_epsilon_cum=8.6579 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 158] global metrics: loss=1.7093 pixel_mse=1.7089 token_norm=23.9784 max_token_norm=24.9473 privacy_epsilon=0.2946 privacy_epsilon_cum=8.6891 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 159] global metrics: loss=1.7091 pixel_mse=1.7087 token_norm=23.9759 max_token_norm=24.9433 privacy_epsilon=0.2946 privacy_epsilon_cum=8.7202 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 160] global metrics: loss=1.7096 pixel_mse=1.7093 token_norm=23.9742 max_token_norm=24.9437 privacy_epsilon=0.2946 privacy_epsilon_cum=8.7514 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 161] global metrics: loss=1.7089 pixel_mse=1.7085 token_norm=23.9730 max_token_norm=24.9418 privacy_epsilon=0.2946 privacy_epsilon_cum=8.7825 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 162] global metrics: loss=1.7089 pixel_mse=1.7085 token_norm=23.9713 max_token_norm=24.9401 privacy_epsilon=0.2946 privacy_epsilon_cum=8.8137 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 163] global metrics: loss=1.7085 pixel_mse=1.7082 token_norm=23.9708 max_token_norm=24.9393 privacy_epsilon=0.2946 privacy_epsilon_cum=8.8448 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 164] global metrics: loss=1.7082 pixel_mse=1.7078 token_norm=23.9688 max_token_norm=24.9394 privacy_epsilon=0.2946 privacy_epsilon_cum=8.8760 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 165] global metrics: loss=1.7089 pixel_mse=1.7085 token_norm=23.9679 max_token_norm=24.9361 privacy_epsilon=0.2946 privacy_epsilon_cum=8.9071 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 166] global metrics: loss=1.7086 pixel_mse=1.7083 token_norm=23.9657 max_token_norm=24.9345 privacy_epsilon=0.2946 privacy_epsilon_cum=8.9383 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 167] global metrics: loss=1.7086 pixel_mse=1.7083 token_norm=23.9652 max_token_norm=24.9340 privacy_epsilon=0.2946 privacy_epsilon_cum=8.9694 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 168] global metrics: loss=1.7091 pixel_mse=1.7087 token_norm=23.9617 max_token_norm=24.9323 privacy_epsilon=0.2946 privacy_epsilon_cum=9.0006 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 169] global metrics: loss=1.7091 pixel_mse=1.7088 token_norm=23.9596 max_token_norm=24.9295 privacy_epsilon=0.2946 privacy_epsilon_cum=9.0317 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 170] global metrics: loss=1.7085 pixel_mse=1.7082 token_norm=23.9594 max_token_norm=24.9305 privacy_epsilon=0.2946 privacy_epsilon_cum=9.0629 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 171] global metrics: loss=1.7090 pixel_mse=1.7086 token_norm=23.9556 max_token_norm=24.9269 privacy_epsilon=0.2946 privacy_epsilon_cum=9.0940 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 172] global metrics: loss=1.7075 pixel_mse=1.7072 token_norm=23.9550 max_token_norm=24.9255 privacy_epsilon=0.2946 privacy_epsilon_cum=9.1252 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 173] global metrics: loss=1.7082 pixel_mse=1.7079 token_norm=23.9537 max_token_norm=24.9235 privacy_epsilon=0.2946 privacy_epsilon_cum=9.1563 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 174] global metrics: loss=1.7080 pixel_mse=1.7077 token_norm=23.9502 max_token_norm=24.9212 privacy_epsilon=0.2946 privacy_epsilon_cum=9.1875 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 175] global metrics: loss=1.7078 pixel_mse=1.7075 token_norm=23.9488 max_token_norm=24.9180 privacy_epsilon=0.2946 privacy_epsilon_cum=9.2186 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 176] global metrics: loss=1.7076 pixel_mse=1.7072 token_norm=23.9467 max_token_norm=24.9184 privacy_epsilon=0.2946 privacy_epsilon_cum=9.2498 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 177] global metrics: loss=1.7086 pixel_mse=1.7082 token_norm=23.9446 max_token_norm=24.9162 privacy_epsilon=0.2946 privacy_epsilon_cum=9.2809 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 178] global metrics: loss=1.7086 pixel_mse=1.7082 token_norm=23.9431 max_token_norm=24.9138 privacy_epsilon=0.2946 privacy_epsilon_cum=9.3121 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 179] global metrics: loss=1.7077 pixel_mse=1.7073 token_norm=23.9419 max_token_norm=24.9136 privacy_epsilon=0.2946 privacy_epsilon_cum=9.3432 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 180] global metrics: loss=1.7080 pixel_mse=1.7076 token_norm=23.9393 max_token_norm=24.9126 privacy_epsilon=0.2946 privacy_epsilon_cum=9.3744 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 181] global metrics: loss=1.7077 pixel_mse=1.7073 token_norm=23.9393 max_token_norm=24.9139 privacy_epsilon=0.2946 privacy_epsilon_cum=9.4055 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 182] global metrics: loss=1.7076 pixel_mse=1.7072 token_norm=23.9369 max_token_norm=24.9099 privacy_epsilon=0.2946 privacy_epsilon_cum=9.4367 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 183] global metrics: loss=1.7078 pixel_mse=1.7075 token_norm=23.9344 max_token_norm=24.9071 privacy_epsilon=0.2946 privacy_epsilon_cum=9.4678 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 184] global metrics: loss=1.7080 pixel_mse=1.7076 token_norm=23.9318 max_token_norm=24.9054 privacy_epsilon=0.2946 privacy_epsilon_cum=9.4990 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 185] global metrics: loss=1.7074 pixel_mse=1.7070 token_norm=23.9307 max_token_norm=24.9056 privacy_epsilon=0.2946 privacy_epsilon_cum=9.5301 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 186] global metrics: loss=1.7084 pixel_mse=1.7081 token_norm=23.9291 max_token_norm=24.9009 privacy_epsilon=0.2946 privacy_epsilon_cum=9.5613 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 187] global metrics: loss=1.7065 pixel_mse=1.7061 token_norm=23.9269 max_token_norm=24.9025 privacy_epsilon=0.2946 privacy_epsilon_cum=9.5924 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 188] global metrics: loss=1.7072 pixel_mse=1.7068 token_norm=23.9273 max_token_norm=24.9019 privacy_epsilon=0.2946 privacy_epsilon_cum=9.6236 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 189] global metrics: loss=1.7078 pixel_mse=1.7074 token_norm=23.9262 max_token_norm=24.9034 privacy_epsilon=0.2946 privacy_epsilon_cum=9.6547 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 190] global metrics: loss=1.7071 pixel_mse=1.7067 token_norm=23.9248 max_token_norm=24.9014 privacy_epsilon=0.2946 privacy_epsilon_cum=9.6859 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 191] global metrics: loss=1.7065 pixel_mse=1.7061 token_norm=23.9238 max_token_norm=24.8984 privacy_epsilon=0.2946 privacy_epsilon_cum=9.7170 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 192] global metrics: loss=1.7070 pixel_mse=1.7066 token_norm=23.9225 max_token_norm=24.8970 privacy_epsilon=0.2946 privacy_epsilon_cum=9.7482 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 193] global metrics: loss=1.7071 pixel_mse=1.7067 token_norm=23.9201 max_token_norm=24.8973 privacy_epsilon=0.2946 privacy_epsilon_cum=9.7793 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 194] global metrics: loss=1.7059 pixel_mse=1.7056 token_norm=23.9181 max_token_norm=24.8925 privacy_epsilon=0.2946 privacy_epsilon_cum=9.8105 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 195] global metrics: loss=1.7060 pixel_mse=1.7057 token_norm=23.9161 max_token_norm=24.8938 privacy_epsilon=0.2946 privacy_epsilon_cum=9.8416 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 196] global metrics: loss=1.7067 pixel_mse=1.7063 token_norm=23.9149 max_token_norm=24.8914 privacy_epsilon=0.2946 privacy_epsilon_cum=9.8728 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 197] global metrics: loss=1.7068 pixel_mse=1.7064 token_norm=23.9125 max_token_norm=24.8895 privacy_epsilon=0.2946 privacy_epsilon_cum=9.9039 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 198] global metrics: loss=1.7064 pixel_mse=1.7060 token_norm=23.9106 max_token_norm=24.8883 privacy_epsilon=0.2946 privacy_epsilon_cum=9.9350 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 199] global metrics: loss=1.7068 pixel_mse=1.7064 token_norm=23.9088 max_token_norm=24.8859 privacy_epsilon=0.2946 privacy_epsilon_cum=9.9662 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Round 200] global metrics: loss=1.7055 pixel_mse=1.7052 token_norm=23.9076 max_token_norm=24.8870 privacy_epsilon=0.2946 privacy_epsilon_cum=9.9973 privacy_epsilon_inc=0.0311 privacy_delta=1.0e-05
+[Done] training completed. final checkpoint saved.

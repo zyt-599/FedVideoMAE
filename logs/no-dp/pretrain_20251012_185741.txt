@@ -1,0 +1,223 @@
+=== Task: pretrain (server) ===
+timestamp: 20251012_185741
+config:
+rounds: 200
+clients_per_round: 40
+local_epochs: 4
+optimizer:
+  lr: 0.0002
+  weight_decay: 0.01
+batch_size: 32
+num_workers: 8
+use_amp: true
+dp:
+  enabled: false
+  target_epsilon: 5
+  target_delta: 1.0e-05
+  noise_multiplier: null
+  max_grad_norm: 1.0
+secure_aggregation:
+  enabled: false
+  threshold: 21
+server_noise_scale: 0.0
+[Round 1] global metrics: pixel_mse=1.2394 pixel_mae=0.9128 pixel_rmse=1.1111 pixel_max=1.1567 pixel_min=-1.9335 token_norm=12.9455 max_token_norm=24.3486 loss=1.2395 recon_loss=1.2394 l2_reg=0.0001
+[Round 2] global metrics: pixel_mse=1.2184 pixel_mae=0.9026 pixel_rmse=1.1002 pixel_max=1.3677 pixel_min=-2.3310 token_norm=13.4229 max_token_norm=30.3278 loss=1.2186 recon_loss=1.2184 l2_reg=0.0001
+[Round 3] global metrics: pixel_mse=1.1098 pixel_mae=0.8551 pixel_rmse=1.0513 pixel_max=1.4045 pixel_min=-2.3533 token_norm=13.1859 max_token_norm=30.9025 loss=1.1099 recon_loss=1.1098 l2_reg=0.0001
+[Round 4] global metrics: pixel_mse=1.1239 pixel_mae=0.8562 pixel_rmse=1.0572 pixel_max=1.5030 pixel_min=-2.3862 token_norm=13.9763 max_token_norm=30.5107 loss=1.1241 recon_loss=1.1239 l2_reg=0.0001
+[Round 5] global metrics: pixel_mse=1.1859 pixel_mae=0.8858 pixel_rmse=1.0865 pixel_max=1.6984 pixel_min=-2.5838 token_norm=14.2721 max_token_norm=30.4966 loss=1.1861 recon_loss=1.1859 l2_reg=0.0002
+[Round 6] global metrics: pixel_mse=1.1611 pixel_mae=0.8694 pixel_rmse=1.0742 pixel_max=1.7013 pixel_min=-2.6098 token_norm=14.1557 max_token_norm=30.2275 loss=1.1612 recon_loss=1.1611 l2_reg=0.0002
+[Round 7] global metrics: pixel_mse=1.1634 pixel_mae=0.8721 pixel_rmse=1.0744 pixel_max=1.7205 pixel_min=-2.6718 token_norm=14.5485 max_token_norm=30.5064 loss=1.1635 recon_loss=1.1634 l2_reg=0.0002
+[Round 8] global metrics: pixel_mse=1.2015 pixel_mae=0.8949 pixel_rmse=1.0935 pixel_max=1.7116 pixel_min=-2.6326 token_norm=14.7350 max_token_norm=30.2169 loss=1.2017 recon_loss=1.2015 l2_reg=0.0002
+[Round 9] global metrics: pixel_mse=1.1774 pixel_mae=0.8762 pixel_rmse=1.0801 pixel_max=1.7420 pixel_min=-2.7339 token_norm=14.6140 max_token_norm=30.4843 loss=1.1775 recon_loss=1.1774 l2_reg=0.0002
+[Round 10] global metrics: pixel_mse=1.1803 pixel_mae=0.8795 pixel_rmse=1.0824 pixel_max=1.7479 pixel_min=-2.6874 token_norm=15.2506 max_token_norm=30.2048 loss=1.1805 recon_loss=1.1803 l2_reg=0.0002
+[Round 11] global metrics: pixel_mse=1.1228 pixel_mae=0.8551 pixel_rmse=1.0563 pixel_max=1.7474 pixel_min=-2.6691 token_norm=15.1915 max_token_norm=29.8750 loss=1.1230 recon_loss=1.1228 l2_reg=0.0002
+[Round 12] global metrics: pixel_mse=1.0928 pixel_mae=0.8393 pixel_rmse=1.0427 pixel_max=1.8179 pixel_min=-2.7259 token_norm=15.3036 max_token_norm=29.8032 loss=1.0930 recon_loss=1.0928 l2_reg=0.0002
+[Round 13] global metrics: pixel_mse=1.1191 pixel_mae=0.8462 pixel_rmse=1.0544 pixel_max=1.8178 pixel_min=-2.7595 token_norm=15.7063 max_token_norm=29.8426 loss=1.1193 recon_loss=1.1191 l2_reg=0.0002
+[Round 14] global metrics: pixel_mse=1.1258 pixel_mae=0.8495 pixel_rmse=1.0590 pixel_max=1.8260 pixel_min=-2.6970 token_norm=15.7869 max_token_norm=29.7064 loss=1.1260 recon_loss=1.1258 l2_reg=0.0002
+[Round 15] global metrics: pixel_mse=1.0941 pixel_mae=0.8365 pixel_rmse=1.0435 pixel_max=1.8267 pixel_min=-2.7231 token_norm=15.9870 max_token_norm=29.6416 loss=1.0943 recon_loss=1.0941 l2_reg=0.0002
+[Round 16] global metrics: pixel_mse=1.0895 pixel_mae=0.8316 pixel_rmse=1.0405 pixel_max=1.8520 pixel_min=-2.7206 token_norm=16.0607 max_token_norm=29.5104 loss=1.0897 recon_loss=1.0895 l2_reg=0.0002
+[Round 17] global metrics: pixel_mse=1.0806 pixel_mae=0.8300 pixel_rmse=1.0359 pixel_max=1.8416 pixel_min=-2.6951 token_norm=16.1749 max_token_norm=29.2619 loss=1.0807 recon_loss=1.0806 l2_reg=0.0002
+[Round 18] global metrics: pixel_mse=1.1244 pixel_mae=0.8480 pixel_rmse=1.0574 pixel_max=1.8603 pixel_min=-2.7205 token_norm=16.2705 max_token_norm=29.3026 loss=1.1246 recon_loss=1.1244 l2_reg=0.0002
+[Round 19] global metrics: pixel_mse=1.1151 pixel_mae=0.8425 pixel_rmse=1.0518 pixel_max=1.8408 pixel_min=-2.6817 token_norm=16.4405 max_token_norm=29.2713 loss=1.1153 recon_loss=1.1151 l2_reg=0.0002
+[Round 20] global metrics: pixel_mse=1.1089 pixel_mae=0.8381 pixel_rmse=1.0489 pixel_max=1.8792 pixel_min=-2.8110 token_norm=16.6567 max_token_norm=29.3132 loss=1.1091 recon_loss=1.1089 l2_reg=0.0002
+[Round 21] global metrics: pixel_mse=1.1158 pixel_mae=0.8420 pixel_rmse=1.0534 pixel_max=1.8609 pixel_min=-2.7532 token_norm=16.7203 max_token_norm=29.2190 loss=1.1160 recon_loss=1.1158 l2_reg=0.0002
+[Round 22] global metrics: pixel_mse=1.1227 pixel_mae=0.8463 pixel_rmse=1.0563 pixel_max=1.8361 pixel_min=-2.6528 token_norm=16.8839 max_token_norm=29.0405 loss=1.1229 recon_loss=1.1227 l2_reg=0.0002
+[Round 23] global metrics: pixel_mse=1.0677 pixel_mae=0.8175 pixel_rmse=1.0308 pixel_max=1.8482 pixel_min=-2.6547 token_norm=16.5515 max_token_norm=29.0788 loss=1.0679 recon_loss=1.0677 l2_reg=0.0002
+[Round 24] global metrics: pixel_mse=1.0657 pixel_mae=0.8192 pixel_rmse=1.0285 pixel_max=1.8357 pixel_min=-2.6803 token_norm=16.7352 max_token_norm=29.1252 loss=1.0659 recon_loss=1.0657 l2_reg=0.0002
+[Round 25] global metrics: pixel_mse=1.1089 pixel_mae=0.8387 pixel_rmse=1.0497 pixel_max=1.8676 pixel_min=-2.7042 token_norm=17.0492 max_token_norm=29.0753 loss=1.1091 recon_loss=1.1089 l2_reg=0.0002
+[Round 26] global metrics: pixel_mse=1.0944 pixel_mae=0.8338 pixel_rmse=1.0433 pixel_max=1.8419 pixel_min=-2.6992 token_norm=16.9194 max_token_norm=28.9890 loss=1.0947 recon_loss=1.0944 l2_reg=0.0002
+[Round 27] global metrics: pixel_mse=1.1059 pixel_mae=0.8350 pixel_rmse=1.0478 pixel_max=1.8626 pixel_min=-2.6693 token_norm=16.8323 max_token_norm=28.8805 loss=1.1061 recon_loss=1.1059 l2_reg=0.0002
+[Round 28] global metrics: pixel_mse=1.0709 pixel_mae=0.8182 pixel_rmse=1.0320 pixel_max=1.8531 pixel_min=-2.6917 token_norm=16.9805 max_token_norm=29.0374 loss=1.0711 recon_loss=1.0709 l2_reg=0.0002
+[Round 29] global metrics: pixel_mse=1.0976 pixel_mae=0.8305 pixel_rmse=1.0437 pixel_max=1.8483 pixel_min=-2.6042 token_norm=16.9714 max_token_norm=28.9559 loss=1.0978 recon_loss=1.0976 l2_reg=0.0002
+[Round 30] global metrics: pixel_mse=1.1240 pixel_mae=0.8489 pixel_rmse=1.0562 pixel_max=1.8677 pixel_min=-2.7049 token_norm=17.4894 max_token_norm=28.9913 loss=1.1242 recon_loss=1.1240 l2_reg=0.0002
+[Round 31] global metrics: pixel_mse=1.0647 pixel_mae=0.8171 pixel_rmse=1.0301 pixel_max=1.8869 pixel_min=-2.6867 token_norm=17.1604 max_token_norm=29.0346 loss=1.0649 recon_loss=1.0647 l2_reg=0.0002
+[Round 32] global metrics: pixel_mse=1.0764 pixel_mae=0.8217 pixel_rmse=1.0345 pixel_max=1.8547 pixel_min=-2.6223 token_norm=16.9620 max_token_norm=28.9385 loss=1.0766 recon_loss=1.0764 l2_reg=0.0002
+[Round 33] global metrics: pixel_mse=1.0665 pixel_mae=0.8163 pixel_rmse=1.0293 pixel_max=1.8690 pixel_min=-2.6567 token_norm=17.0105 max_token_norm=28.9064 loss=1.0667 recon_loss=1.0665 l2_reg=0.0002
+[Round 34] global metrics: pixel_mse=1.0394 pixel_mae=0.8013 pixel_rmse=1.0153 pixel_max=1.8656 pixel_min=-2.6311 token_norm=16.9299 max_token_norm=28.9115 loss=1.0396 recon_loss=1.0394 l2_reg=0.0002
+[Round 35] global metrics: pixel_mse=1.0261 pixel_mae=0.7958 pixel_rmse=1.0099 pixel_max=1.8677 pixel_min=-2.6741 token_norm=16.9998 max_token_norm=28.9836 loss=1.0263 recon_loss=1.0261 l2_reg=0.0002
+[Round 36] global metrics: pixel_mse=1.0513 pixel_mae=0.8119 pixel_rmse=1.0215 pixel_max=1.8638 pixel_min=-2.6048 token_norm=17.0631 max_token_norm=28.8674 loss=1.0515 recon_loss=1.0513 l2_reg=0.0002
+[Round 37] global metrics: pixel_mse=1.0344 pixel_mae=0.8033 pixel_rmse=1.0140 pixel_max=1.8542 pixel_min=-2.6475 token_norm=16.9329 max_token_norm=28.8156 loss=1.0346 recon_loss=1.0344 l2_reg=0.0002
+[Round 38] global metrics: pixel_mse=1.0761 pixel_mae=0.8214 pixel_rmse=1.0333 pixel_max=1.9000 pixel_min=-2.6576 token_norm=17.1484 max_token_norm=28.9180 loss=1.0763 recon_loss=1.0761 l2_reg=0.0002
+[Round 39] global metrics: pixel_mse=1.0728 pixel_mae=0.8204 pixel_rmse=1.0318 pixel_max=1.8883 pixel_min=-2.6417 token_norm=17.2616 max_token_norm=28.8891 loss=1.0730 recon_loss=1.0728 l2_reg=0.0002
+[Round 40] global metrics: pixel_mse=1.0837 pixel_mae=0.8257 pixel_rmse=1.0378 pixel_max=1.8976 pixel_min=-2.6651 token_norm=17.1683 max_token_norm=28.9295 loss=1.0839 recon_loss=1.0837 l2_reg=0.0002
+[Round 41] global metrics: pixel_mse=1.0548 pixel_mae=0.8104 pixel_rmse=1.0243 pixel_max=1.9057 pixel_min=-2.6619 token_norm=17.2648 max_token_norm=28.9088 loss=1.0550 recon_loss=1.0548 l2_reg=0.0002
+[Round 42] global metrics: pixel_mse=1.0629 pixel_mae=0.8144 pixel_rmse=1.0276 pixel_max=1.9099 pixel_min=-2.6291 token_norm=17.3645 max_token_norm=28.8757 loss=1.0631 recon_loss=1.0629 l2_reg=0.0002
+[Round 43] global metrics: pixel_mse=1.0647 pixel_mae=0.8183 pixel_rmse=1.0296 pixel_max=1.9146 pixel_min=-2.6325 token_norm=17.5588 max_token_norm=28.8187 loss=1.0650 recon_loss=1.0647 l2_reg=0.0002
+[Round 44] global metrics: pixel_mse=1.0315 pixel_mae=0.8030 pixel_rmse=1.0122 pixel_max=1.9003 pixel_min=-2.6763 token_norm=17.2050 max_token_norm=28.7446 loss=1.0317 recon_loss=1.0315 l2_reg=0.0002
+[Round 45] global metrics: pixel_mse=1.0384 pixel_mae=0.8043 pixel_rmse=1.0155 pixel_max=1.9108 pixel_min=-2.6172 token_norm=17.2177 max_token_norm=28.7619 loss=1.0386 recon_loss=1.0384 l2_reg=0.0002
+[Round 46] global metrics: pixel_mse=1.0771 pixel_mae=0.8214 pixel_rmse=1.0352 pixel_max=1.9290 pixel_min=-2.6274 token_norm=17.6069 max_token_norm=28.8276 loss=1.0773 recon_loss=1.0771 l2_reg=0.0002
+[Round 47] global metrics: pixel_mse=1.0486 pixel_mae=0.8055 pixel_rmse=1.0209 pixel_max=1.9255 pixel_min=-2.6750 token_norm=17.2226 max_token_norm=28.8560 loss=1.0488 recon_loss=1.0486 l2_reg=0.0002
+[Round 48] global metrics: pixel_mse=1.0551 pixel_mae=0.8084 pixel_rmse=1.0245 pixel_max=1.9193 pixel_min=-2.6245 token_norm=17.5343 max_token_norm=28.7373 loss=1.0553 recon_loss=1.0551 l2_reg=0.0002
+[Round 49] global metrics: pixel_mse=1.0453 pixel_mae=0.8074 pixel_rmse=1.0191 pixel_max=1.9367 pixel_min=-2.6203 token_norm=17.6082 max_token_norm=28.7566 loss=1.0455 recon_loss=1.0453 l2_reg=0.0002
+[Round 50] global metrics: pixel_mse=1.0602 pixel_mae=0.8133 pixel_rmse=1.0271 pixel_max=1.9309 pixel_min=-2.6227 token_norm=17.5823 max_token_norm=28.7360 loss=1.0604 recon_loss=1.0602 l2_reg=0.0002
+[Round 51] global metrics: pixel_mse=1.0876 pixel_mae=0.8244 pixel_rmse=1.0395 pixel_max=1.9484 pixel_min=-2.7165 token_norm=17.7763 max_token_norm=28.8210 loss=1.0879 recon_loss=1.0876 l2_reg=0.0002
+[Round 52] global metrics: pixel_mse=1.0265 pixel_mae=0.7975 pixel_rmse=1.0095 pixel_max=1.9507 pixel_min=-2.6621 token_norm=17.5579 max_token_norm=28.7029 loss=1.0267 recon_loss=1.0265 l2_reg=0.0002
+[Round 53] global metrics: pixel_mse=1.0832 pixel_mae=0.8235 pixel_rmse=1.0374 pixel_max=1.9668 pixel_min=-2.6361 token_norm=17.8024 max_token_norm=28.7382 loss=1.0834 recon_loss=1.0832 l2_reg=0.0002
+[Round 54] global metrics: pixel_mse=1.0661 pixel_mae=0.8136 pixel_rmse=1.0290 pixel_max=1.9960 pixel_min=-2.6466 token_norm=17.5427 max_token_norm=28.6888 loss=1.0664 recon_loss=1.0661 l2_reg=0.0002
+[Round 55] global metrics: pixel_mse=1.0652 pixel_mae=0.8150 pixel_rmse=1.0288 pixel_max=1.9863 pixel_min=-2.6584 token_norm=17.5590 max_token_norm=28.7096 loss=1.0654 recon_loss=1.0652 l2_reg=0.0002
+[Round 56] global metrics: pixel_mse=1.0824 pixel_mae=0.8220 pixel_rmse=1.0372 pixel_max=1.9691 pixel_min=-2.6554 token_norm=17.7106 max_token_norm=28.7947 loss=1.0827 recon_loss=1.0824 l2_reg=0.0002
+[Round 57] global metrics: pixel_mse=1.0559 pixel_mae=0.8110 pixel_rmse=1.0252 pixel_max=1.9907 pixel_min=-2.6906 token_norm=17.7134 max_token_norm=28.7543 loss=1.0562 recon_loss=1.0559 l2_reg=0.0002
+[Round 58] global metrics: pixel_mse=1.0448 pixel_mae=0.8045 pixel_rmse=1.0192 pixel_max=1.9916 pixel_min=-2.6339 token_norm=17.5461 max_token_norm=28.6056 loss=1.0450 recon_loss=1.0448 l2_reg=0.0002
+[Round 59] global metrics: pixel_mse=1.0635 pixel_mae=0.8153 pixel_rmse=1.0283 pixel_max=1.9982 pixel_min=-2.7094 token_norm=17.8442 max_token_norm=28.7996 loss=1.0637 recon_loss=1.0635 l2_reg=0.0002
+[Round 60] global metrics: pixel_mse=1.0858 pixel_mae=0.8260 pixel_rmse=1.0390 pixel_max=2.0342 pixel_min=-2.6222 token_norm=17.7112 max_token_norm=28.6271 loss=1.0861 recon_loss=1.0858 l2_reg=0.0002
+[Round 61] global metrics: pixel_mse=1.0569 pixel_mae=0.8108 pixel_rmse=1.0262 pixel_max=2.0231 pixel_min=-2.6188 token_norm=17.6419 max_token_norm=28.7329 loss=1.0572 recon_loss=1.0569 l2_reg=0.0002
+[Round 62] global metrics: pixel_mse=1.0901 pixel_mae=0.8262 pixel_rmse=1.0412 pixel_max=2.0263 pixel_min=-2.6217 token_norm=17.8096 max_token_norm=28.6957 loss=1.0903 recon_loss=1.0901 l2_reg=0.0002
+[Round 63] global metrics: pixel_mse=0.9978 pixel_mae=0.7839 pixel_rmse=0.9963 pixel_max=1.9967 pixel_min=-2.6325 token_norm=17.5121 max_token_norm=28.7374 loss=0.9981 recon_loss=0.9978 l2_reg=0.0002
+[Round 64] global metrics: pixel_mse=1.0594 pixel_mae=0.8101 pixel_rmse=1.0270 pixel_max=2.0165 pixel_min=-2.7071 token_norm=17.7783 max_token_norm=28.7187 loss=1.0596 recon_loss=1.0594 l2_reg=0.0002
+[Round 65] global metrics: pixel_mse=1.0235 pixel_mae=0.7955 pixel_rmse=1.0084 pixel_max=2.0460 pixel_min=-2.6611 token_norm=17.7310 max_token_norm=28.6664 loss=1.0238 recon_loss=1.0235 l2_reg=0.0002
+[Round 66] global metrics: pixel_mse=1.0497 pixel_mae=0.8097 pixel_rmse=1.0216 pixel_max=2.0164 pixel_min=-2.6645 token_norm=17.7670 max_token_norm=28.6448 loss=1.0499 recon_loss=1.0497 l2_reg=0.0002
+[Round 67] global metrics: pixel_mse=1.0068 pixel_mae=0.7876 pixel_rmse=1.0006 pixel_max=2.0130 pixel_min=-2.6739 token_norm=17.5506 max_token_norm=28.6806 loss=1.0070 recon_loss=1.0068 l2_reg=0.0002
+[Round 68] global metrics: pixel_mse=1.0435 pixel_mae=0.8022 pixel_rmse=1.0180 pixel_max=2.0232 pixel_min=-2.7267 token_norm=17.8808 max_token_norm=28.7223 loss=1.0437 recon_loss=1.0435 l2_reg=0.0002
+[Round 69] global metrics: pixel_mse=1.0532 pixel_mae=0.8029 pixel_rmse=1.0226 pixel_max=2.0550 pixel_min=-2.6753 token_norm=17.7150 max_token_norm=28.6452 loss=1.0535 recon_loss=1.0532 l2_reg=0.0002
+[Round 70] global metrics: pixel_mse=1.0717 pixel_mae=0.8189 pixel_rmse=1.0322 pixel_max=2.0399 pixel_min=-2.6673 token_norm=17.9378 max_token_norm=28.5963 loss=1.0719 recon_loss=1.0717 l2_reg=0.0002
+[Round 71] global metrics: pixel_mse=1.0523 pixel_mae=0.8078 pixel_rmse=1.0235 pixel_max=2.0480 pixel_min=-2.7062 token_norm=17.8775 max_token_norm=28.7042 loss=1.0525 recon_loss=1.0523 l2_reg=0.0002
+[Round 72] global metrics: pixel_mse=1.0423 pixel_mae=0.8028 pixel_rmse=1.0181 pixel_max=2.0726 pixel_min=-2.6596 token_norm=17.9022 max_token_norm=28.7154 loss=1.0425 recon_loss=1.0423 l2_reg=0.0002
+[Round 73] global metrics: pixel_mse=1.0398 pixel_mae=0.8017 pixel_rmse=1.0168 pixel_max=2.0491 pixel_min=-2.7087 token_norm=17.7829 max_token_norm=28.7189 loss=1.0400 recon_loss=1.0398 l2_reg=0.0002
+[Round 74] global metrics: pixel_mse=1.0859 pixel_mae=0.8258 pixel_rmse=1.0386 pixel_max=2.0835 pixel_min=-2.7588 token_norm=18.2195 max_token_norm=28.7726 loss=1.0862 recon_loss=1.0859 l2_reg=0.0002
+[Round 75] global metrics: pixel_mse=1.1094 pixel_mae=0.8372 pixel_rmse=1.0494 pixel_max=2.0591 pixel_min=-2.7189 token_norm=18.2030 max_token_norm=28.7408 loss=1.1097 recon_loss=1.1094 l2_reg=0.0002
+[Round 76] global metrics: pixel_mse=1.0391 pixel_mae=0.8024 pixel_rmse=1.0168 pixel_max=2.0656 pixel_min=-2.6941 token_norm=18.0610 max_token_norm=28.7561 loss=1.0394 recon_loss=1.0391 l2_reg=0.0002
+[Round 77] global metrics: pixel_mse=1.0758 pixel_mae=0.8194 pixel_rmse=1.0346 pixel_max=2.0904 pixel_min=-2.6906 token_norm=17.9633 max_token_norm=28.7527 loss=1.0760 recon_loss=1.0758 l2_reg=0.0002
+[Round 78] global metrics: pixel_mse=1.0508 pixel_mae=0.8118 pixel_rmse=1.0210 pixel_max=2.0594 pixel_min=-2.6721 token_norm=17.9454 max_token_norm=28.8007 loss=1.0511 recon_loss=1.0508 l2_reg=0.0002
+[Round 79] global metrics: pixel_mse=1.0369 pixel_mae=0.7993 pixel_rmse=1.0158 pixel_max=2.0608 pixel_min=-2.7085 token_norm=17.9099 max_token_norm=28.8213 loss=1.0371 recon_loss=1.0369 l2_reg=0.0002
+[Round 80] global metrics: pixel_mse=1.0756 pixel_mae=0.8200 pixel_rmse=1.0341 pixel_max=2.0814 pixel_min=-2.6519 token_norm=18.0742 max_token_norm=28.6924 loss=1.0758 recon_loss=1.0756 l2_reg=0.0002
+[Round 81] global metrics: pixel_mse=1.0327 pixel_mae=0.7976 pixel_rmse=1.0131 pixel_max=2.0902 pixel_min=-2.6357 token_norm=17.8689 max_token_norm=28.7277 loss=1.0330 recon_loss=1.0327 l2_reg=0.0002
+[Round 82] global metrics: pixel_mse=1.0591 pixel_mae=0.8088 pixel_rmse=1.0262 pixel_max=2.0813 pixel_min=-2.6883 token_norm=17.9238 max_token_norm=28.7439 loss=1.0594 recon_loss=1.0591 l2_reg=0.0002
+[Round 83] global metrics: pixel_mse=1.0211 pixel_mae=0.7970 pixel_rmse=1.0079 pixel_max=2.0936 pixel_min=-2.6793 token_norm=17.9190 max_token_norm=28.7295 loss=1.0214 recon_loss=1.0211 l2_reg=0.0002
+[Round 84] global metrics: pixel_mse=1.0554 pixel_mae=0.8086 pixel_rmse=1.0242 pixel_max=2.0808 pixel_min=-2.6041 token_norm=17.8273 max_token_norm=28.6720 loss=1.0556 recon_loss=1.0554 l2_reg=0.0002
+[Round 85] global metrics: pixel_mse=1.0523 pixel_mae=0.8082 pixel_rmse=1.0226 pixel_max=2.0853 pixel_min=-2.6765 token_norm=17.9961 max_token_norm=28.6996 loss=1.0526 recon_loss=1.0523 l2_reg=0.0002
+[Round 86] global metrics: pixel_mse=1.0154 pixel_mae=0.7914 pixel_rmse=1.0040 pixel_max=2.0686 pixel_min=-2.6614 token_norm=17.7758 max_token_norm=28.6801 loss=1.0156 recon_loss=1.0154 l2_reg=0.0002
+[Round 87] global metrics: pixel_mse=1.0527 pixel_mae=0.8092 pixel_rmse=1.0233 pixel_max=2.0953 pixel_min=-2.6621 token_norm=18.1616 max_token_norm=28.7878 loss=1.0529 recon_loss=1.0527 l2_reg=0.0002
+[Round 88] global metrics: pixel_mse=1.0644 pixel_mae=0.8127 pixel_rmse=1.0281 pixel_max=2.0960 pixel_min=-2.7206 token_norm=18.1817 max_token_norm=28.7416 loss=1.0646 recon_loss=1.0644 l2_reg=0.0002
+[Round 89] global metrics: pixel_mse=1.0324 pixel_mae=0.8036 pixel_rmse=1.0127 pixel_max=2.0823 pixel_min=-2.6226 token_norm=18.1139 max_token_norm=28.5804 loss=1.0327 recon_loss=1.0324 l2_reg=0.0002
+[Round 90] global metrics: pixel_mse=1.0503 pixel_mae=0.8107 pixel_rmse=1.0224 pixel_max=2.1111 pixel_min=-2.6861 token_norm=18.0843 max_token_norm=28.7406 loss=1.0505 recon_loss=1.0503 l2_reg=0.0002
+[Round 91] global metrics: pixel_mse=1.0517 pixel_mae=0.8081 pixel_rmse=1.0236 pixel_max=2.1075 pixel_min=-2.6230 token_norm=18.0685 max_token_norm=28.6512 loss=1.0519 recon_loss=1.0517 l2_reg=0.0002
+[Round 92] global metrics: pixel_mse=1.0557 pixel_mae=0.8060 pixel_rmse=1.0237 pixel_max=2.1227 pixel_min=-2.5822 token_norm=18.0248 max_token_norm=28.5688 loss=1.0559 recon_loss=1.0557 l2_reg=0.0002
+[Round 93] global metrics: pixel_mse=1.0227 pixel_mae=0.7936 pixel_rmse=1.0080 pixel_max=2.0992 pixel_min=-2.6885 token_norm=18.0138 max_token_norm=28.6741 loss=1.0229 recon_loss=1.0227 l2_reg=0.0002
+[Round 94] global metrics: pixel_mse=1.0804 pixel_mae=0.8212 pixel_rmse=1.0358 pixel_max=2.1112 pixel_min=-2.6006 token_norm=18.0352 max_token_norm=28.6188 loss=1.0806 recon_loss=1.0804 l2_reg=0.0002
+[Round 95] global metrics: pixel_mse=1.0881 pixel_mae=0.8209 pixel_rmse=1.0391 pixel_max=2.1227 pixel_min=-2.6889 token_norm=18.2142 max_token_norm=28.7029 loss=1.0883 recon_loss=1.0881 l2_reg=0.0002
+[Round 96] global metrics: pixel_mse=1.0584 pixel_mae=0.8131 pixel_rmse=1.0260 pixel_max=2.0936 pixel_min=-2.7185 token_norm=18.0661 max_token_norm=28.7979 loss=1.0587 recon_loss=1.0584 l2_reg=0.0002
+[Round 97] global metrics: pixel_mse=1.0320 pixel_mae=0.8005 pixel_rmse=1.0124 pixel_max=2.0875 pixel_min=-2.6384 token_norm=18.0422 max_token_norm=28.5989 loss=1.0323 recon_loss=1.0320 l2_reg=0.0002
+[Round 98] global metrics: pixel_mse=1.0464 pixel_mae=0.8061 pixel_rmse=1.0198 pixel_max=2.1029 pixel_min=-2.6500 token_norm=18.1695 max_token_norm=28.6134 loss=1.0466 recon_loss=1.0464 l2_reg=0.0002
+[Round 99] global metrics: pixel_mse=1.0474 pixel_mae=0.8073 pixel_rmse=1.0201 pixel_max=2.1136 pixel_min=-2.6267 token_norm=18.1369 max_token_norm=28.6823 loss=1.0476 recon_loss=1.0474 l2_reg=0.0002
+[Round 100] global metrics: pixel_mse=1.0604 pixel_mae=0.8150 pixel_rmse=1.0255 pixel_max=2.1017 pixel_min=-2.6419 token_norm=18.2484 max_token_norm=28.5822 loss=1.0606 recon_loss=1.0604 l2_reg=0.0002
+[Round 101] global metrics: pixel_mse=1.0151 pixel_mae=0.7925 pixel_rmse=1.0047 pixel_max=2.0955 pixel_min=-2.6959 token_norm=17.9907 max_token_norm=28.6764 loss=1.0154 recon_loss=1.0151 l2_reg=0.0002
+[Round 102] global metrics: pixel_mse=1.0549 pixel_mae=0.8087 pixel_rmse=1.0243 pixel_max=2.1072 pixel_min=-2.6693 token_norm=18.0766 max_token_norm=28.5625 loss=1.0551 recon_loss=1.0549 l2_reg=0.0002
+[Round 103] global metrics: pixel_mse=1.0466 pixel_mae=0.8045 pixel_rmse=1.0201 pixel_max=2.1162 pixel_min=-2.6543 token_norm=18.0843 max_token_norm=28.6217 loss=1.0468 recon_loss=1.0466 l2_reg=0.0002
+[Round 104] global metrics: pixel_mse=1.0575 pixel_mae=0.8079 pixel_rmse=1.0233 pixel_max=2.1195 pixel_min=-2.7121 token_norm=18.1402 max_token_norm=28.7026 loss=1.0577 recon_loss=1.0575 l2_reg=0.0002
+[Round 105] global metrics: pixel_mse=1.0628 pixel_mae=0.8122 pixel_rmse=1.0277 pixel_max=2.1269 pixel_min=-2.6021 token_norm=18.1606 max_token_norm=28.5924 loss=1.0630 recon_loss=1.0628 l2_reg=0.0002
+[Round 106] global metrics: pixel_mse=1.0525 pixel_mae=0.8042 pixel_rmse=1.0234 pixel_max=2.1454 pixel_min=-2.6240 token_norm=18.1023 max_token_norm=28.7046 loss=1.0527 recon_loss=1.0525 l2_reg=0.0002
+[Round 107] global metrics: pixel_mse=1.0337 pixel_mae=0.8037 pixel_rmse=1.0137 pixel_max=2.1215 pixel_min=-2.6197 token_norm=18.2551 max_token_norm=28.6286 loss=1.0339 recon_loss=1.0337 l2_reg=0.0002
+[Round 108] global metrics: pixel_mse=1.0185 pixel_mae=0.7918 pixel_rmse=1.0071 pixel_max=2.1342 pixel_min=-2.6332 token_norm=17.8973 max_token_norm=28.6100 loss=1.0187 recon_loss=1.0185 l2_reg=0.0002
+[Round 109] global metrics: pixel_mse=1.0527 pixel_mae=0.8079 pixel_rmse=1.0228 pixel_max=2.1237 pixel_min=-2.6587 token_norm=18.2154 max_token_norm=28.6381 loss=1.0529 recon_loss=1.0527 l2_reg=0.0002
+[Round 110] global metrics: pixel_mse=1.0416 pixel_mae=0.8048 pixel_rmse=1.0179 pixel_max=2.1277 pixel_min=-2.6650 token_norm=18.1293 max_token_norm=28.6349 loss=1.0419 recon_loss=1.0416 l2_reg=0.0002
+[Round 111] global metrics: pixel_mse=1.0294 pixel_mae=0.7965 pixel_rmse=1.0128 pixel_max=2.1318 pixel_min=-2.6145 token_norm=18.0553 max_token_norm=28.5954 loss=1.0296 recon_loss=1.0294 l2_reg=0.0002
+[Round 112] global metrics: pixel_mse=1.0452 pixel_mae=0.8068 pixel_rmse=1.0182 pixel_max=2.1533 pixel_min=-2.6214 token_norm=18.2923 max_token_norm=28.5402 loss=1.0454 recon_loss=1.0452 l2_reg=0.0002
+[Round 113] global metrics: pixel_mse=1.0533 pixel_mae=0.8093 pixel_rmse=1.0229 pixel_max=2.1503 pixel_min=-2.6626 token_norm=18.2579 max_token_norm=28.6978 loss=1.0536 recon_loss=1.0533 l2_reg=0.0002
+[Round 114] global metrics: pixel_mse=1.0256 pixel_mae=0.7981 pixel_rmse=1.0100 pixel_max=2.1348 pixel_min=-2.7122 token_norm=18.1193 max_token_norm=28.7488 loss=1.0259 recon_loss=1.0256 l2_reg=0.0002
+[Round 115] global metrics: pixel_mse=1.0550 pixel_mae=0.8058 pixel_rmse=1.0243 pixel_max=2.1296 pixel_min=-2.6680 token_norm=18.1674 max_token_norm=28.6460 loss=1.0553 recon_loss=1.0550 l2_reg=0.0002
+[Round 116] global metrics: pixel_mse=1.0777 pixel_mae=0.8219 pixel_rmse=1.0350 pixel_max=2.1339 pixel_min=-2.6604 token_norm=18.3200 max_token_norm=28.6552 loss=1.0779 recon_loss=1.0777 l2_reg=0.0002
+[Round 117] global metrics: pixel_mse=1.0412 pixel_mae=0.8021 pixel_rmse=1.0173 pixel_max=2.1204 pixel_min=-2.6335 token_norm=18.0631 max_token_norm=28.6567 loss=1.0415 recon_loss=1.0412 l2_reg=0.0002
+[Round 118] global metrics: pixel_mse=1.0793 pixel_mae=0.8191 pixel_rmse=1.0359 pixel_max=2.1500 pixel_min=-2.6560 token_norm=18.2785 max_token_norm=28.6744 loss=1.0795 recon_loss=1.0793 l2_reg=0.0002
+[Round 119] global metrics: pixel_mse=1.0204 pixel_mae=0.7939 pixel_rmse=1.0081 pixel_max=2.1154 pixel_min=-2.6241 token_norm=18.0915 max_token_norm=28.5578 loss=1.0207 recon_loss=1.0204 l2_reg=0.0002
+[Round 120] global metrics: pixel_mse=1.0195 pixel_mae=0.7884 pixel_rmse=1.0063 pixel_max=2.1577 pixel_min=-2.6152 token_norm=18.0687 max_token_norm=28.5985 loss=1.0197 recon_loss=1.0195 l2_reg=0.0002
+[Round 121] global metrics: pixel_mse=1.0393 pixel_mae=0.8039 pixel_rmse=1.0169 pixel_max=2.1335 pixel_min=-2.6504 token_norm=18.2192 max_token_norm=28.6225 loss=1.0395 recon_loss=1.0393 l2_reg=0.0002
+[Round 122] global metrics: pixel_mse=1.0225 pixel_mae=0.7921 pixel_rmse=1.0088 pixel_max=2.1297 pixel_min=-2.6772 token_norm=18.1572 max_token_norm=28.7351 loss=1.0227 recon_loss=1.0225 l2_reg=0.0002
+[Round 123] global metrics: pixel_mse=1.0595 pixel_mae=0.8095 pixel_rmse=1.0267 pixel_max=2.1539 pixel_min=-2.6604 token_norm=18.1884 max_token_norm=28.7052 loss=1.0597 recon_loss=1.0595 l2_reg=0.0002
+[Round 124] global metrics: pixel_mse=1.0654 pixel_mae=0.8129 pixel_rmse=1.0297 pixel_max=2.1485 pixel_min=-2.7147 token_norm=18.2895 max_token_norm=28.6438 loss=1.0656 recon_loss=1.0654 l2_reg=0.0002
+[Round 125] global metrics: pixel_mse=1.0648 pixel_mae=0.8115 pixel_rmse=1.0290 pixel_max=2.1732 pixel_min=-2.6974 token_norm=18.2935 max_token_norm=28.7151 loss=1.0651 recon_loss=1.0648 l2_reg=0.0002
+[Round 126] global metrics: pixel_mse=1.0183 pixel_mae=0.7941 pixel_rmse=1.0055 pixel_max=2.1530 pixel_min=-2.6762 token_norm=18.1739 max_token_norm=28.6213 loss=1.0186 recon_loss=1.0183 l2_reg=0.0002
+[Round 127] global metrics: pixel_mse=1.0441 pixel_mae=0.8059 pixel_rmse=1.0179 pixel_max=2.1550 pixel_min=-2.6725 token_norm=18.3928 max_token_norm=28.7316 loss=1.0444 recon_loss=1.0441 l2_reg=0.0002
+[Round 128] global metrics: pixel_mse=1.0320 pixel_mae=0.7974 pixel_rmse=1.0118 pixel_max=2.1478 pixel_min=-2.6500 token_norm=18.1872 max_token_norm=28.6676 loss=1.0322 recon_loss=1.0320 l2_reg=0.0002
+[Round 129] global metrics: pixel_mse=1.0378 pixel_mae=0.8045 pixel_rmse=1.0162 pixel_max=2.1665 pixel_min=-2.6825 token_norm=18.2691 max_token_norm=28.6500 loss=1.0380 recon_loss=1.0378 l2_reg=0.0002
+[Round 130] global metrics: pixel_mse=1.0762 pixel_mae=0.8202 pixel_rmse=1.0342 pixel_max=2.1634 pixel_min=-2.6463 token_norm=18.2265 max_token_norm=28.5349 loss=1.0765 recon_loss=1.0762 l2_reg=0.0002
+[Round 131] global metrics: pixel_mse=1.0312 pixel_mae=0.7961 pixel_rmse=1.0116 pixel_max=2.1631 pixel_min=-2.6188 token_norm=18.0991 max_token_norm=28.5226 loss=1.0315 recon_loss=1.0312 l2_reg=0.0002
+[Round 132] global metrics: pixel_mse=1.0295 pixel_mae=0.7982 pixel_rmse=1.0107 pixel_max=2.1595 pixel_min=-2.6774 token_norm=18.1620 max_token_norm=28.6591 loss=1.0298 recon_loss=1.0295 l2_reg=0.0002
+[Round 133] global metrics: pixel_mse=1.0083 pixel_mae=0.7862 pixel_rmse=1.0020 pixel_max=2.1733 pixel_min=-2.6579 token_norm=18.0694 max_token_norm=28.6253 loss=1.0085 recon_loss=1.0083 l2_reg=0.0002
+[Round 134] global metrics: pixel_mse=1.0599 pixel_mae=0.8120 pixel_rmse=1.0261 pixel_max=2.1492 pixel_min=-2.6741 token_norm=18.2860 max_token_norm=28.6371 loss=1.0601 recon_loss=1.0599 l2_reg=0.0002
+[Round 135] global metrics: pixel_mse=1.0531 pixel_mae=0.8079 pixel_rmse=1.0231 pixel_max=2.1862 pixel_min=-2.5982 token_norm=18.3796 max_token_norm=28.5181 loss=1.0534 recon_loss=1.0531 l2_reg=0.0002
+[Round 136] global metrics: pixel_mse=1.0979 pixel_mae=0.8309 pixel_rmse=1.0453 pixel_max=2.2001 pixel_min=-2.6701 token_norm=18.5261 max_token_norm=28.6542 loss=1.0982 recon_loss=1.0979 l2_reg=0.0002
+[Round 137] global metrics: pixel_mse=1.0751 pixel_mae=0.8199 pixel_rmse=1.0325 pixel_max=2.1554 pixel_min=-2.6464 token_norm=18.3433 max_token_norm=28.5828 loss=1.0754 recon_loss=1.0751 l2_reg=0.0002
+[Round 138] global metrics: pixel_mse=1.0566 pixel_mae=0.8098 pixel_rmse=1.0248 pixel_max=2.1772 pixel_min=-2.6216 token_norm=18.3280 max_token_norm=28.5985 loss=1.0568 recon_loss=1.0566 l2_reg=0.0002
+[Round 139] global metrics: pixel_mse=1.0664 pixel_mae=0.8146 pixel_rmse=1.0274 pixel_max=2.1716 pixel_min=-2.6917 token_norm=18.3352 max_token_norm=28.6700 loss=1.0666 recon_loss=1.0664 l2_reg=0.0002
+[Round 140] global metrics: pixel_mse=1.0738 pixel_mae=0.8194 pixel_rmse=1.0336 pixel_max=2.1874 pixel_min=-2.6950 token_norm=18.3890 max_token_norm=28.6551 loss=1.0740 recon_loss=1.0738 l2_reg=0.0002
+[Round 141] global metrics: pixel_mse=1.0615 pixel_mae=0.8129 pixel_rmse=1.0278 pixel_max=2.1605 pixel_min=-2.6849 token_norm=18.3576 max_token_norm=28.6424 loss=1.0617 recon_loss=1.0615 l2_reg=0.0002
+[Round 142] global metrics: pixel_mse=1.0100 pixel_mae=0.7861 pixel_rmse=1.0018 pixel_max=2.1559 pixel_min=-2.6277 token_norm=18.0324 max_token_norm=28.5335 loss=1.0102 recon_loss=1.0100 l2_reg=0.0002
+[Round 143] global metrics: pixel_mse=1.0692 pixel_mae=0.8129 pixel_rmse=1.0312 pixel_max=2.1901 pixel_min=-2.6854 token_norm=18.1919 max_token_norm=28.6458 loss=1.0694 recon_loss=1.0692 l2_reg=0.0002
+[Round 144] global metrics: pixel_mse=1.0187 pixel_mae=0.7915 pixel_rmse=1.0057 pixel_max=2.1589 pixel_min=-2.5896 token_norm=18.1107 max_token_norm=28.5173 loss=1.0190 recon_loss=1.0187 l2_reg=0.0002
+[Round 145] global metrics: pixel_mse=1.0196 pixel_mae=0.7923 pixel_rmse=1.0076 pixel_max=2.1658 pixel_min=-2.6358 token_norm=18.1618 max_token_norm=28.5731 loss=1.0199 recon_loss=1.0196 l2_reg=0.0002
+[Round 146] global metrics: pixel_mse=1.0082 pixel_mae=0.7853 pixel_rmse=1.0022 pixel_max=2.1884 pixel_min=-2.6742 token_norm=18.1569 max_token_norm=28.5820 loss=1.0085 recon_loss=1.0082 l2_reg=0.0002
+[Round 147] global metrics: pixel_mse=1.0603 pixel_mae=0.8083 pixel_rmse=1.0249 pixel_max=2.1803 pixel_min=-2.6319 token_norm=18.2857 max_token_norm=28.5476 loss=1.0605 recon_loss=1.0603 l2_reg=0.0002
+[Round 148] global metrics: pixel_mse=1.0403 pixel_mae=0.8048 pixel_rmse=1.0167 pixel_max=2.1564 pixel_min=-2.6560 token_norm=18.3737 max_token_norm=28.5684 loss=1.0405 recon_loss=1.0403 l2_reg=0.0002
+[Round 149] global metrics: pixel_mse=1.0251 pixel_mae=0.7902 pixel_rmse=1.0075 pixel_max=2.1836 pixel_min=-2.6586 token_norm=18.2023 max_token_norm=28.6274 loss=1.0253 recon_loss=1.0251 l2_reg=0.0002
+[Round 150] global metrics: pixel_mse=0.9864 pixel_mae=0.7789 pixel_rmse=0.9902 pixel_max=2.1473 pixel_min=-2.5830 token_norm=17.8943 max_token_norm=28.4675 loss=0.9866 recon_loss=0.9864 l2_reg=0.0002
+[Round 151] global metrics: pixel_mse=1.0529 pixel_mae=0.8056 pixel_rmse=1.0237 pixel_max=2.1934 pixel_min=-2.6832 token_norm=18.4134 max_token_norm=28.6195 loss=1.0532 recon_loss=1.0529 l2_reg=0.0002
+[Round 152] global metrics: pixel_mse=1.0822 pixel_mae=0.8209 pixel_rmse=1.0377 pixel_max=2.1814 pixel_min=-2.6875 token_norm=18.5105 max_token_norm=28.6843 loss=1.0824 recon_loss=1.0822 l2_reg=0.0002
+[Round 153] global metrics: pixel_mse=1.0549 pixel_mae=0.8099 pixel_rmse=1.0228 pixel_max=2.1749 pixel_min=-2.6373 token_norm=18.3067 max_token_norm=28.5461 loss=1.0551 recon_loss=1.0549 l2_reg=0.0002
+[Round 154] global metrics: pixel_mse=1.0077 pixel_mae=0.7860 pixel_rmse=1.0003 pixel_max=2.1886 pixel_min=-2.6661 token_norm=18.1156 max_token_norm=28.6513 loss=1.0080 recon_loss=1.0077 l2_reg=0.0002
+[Round 155] global metrics: pixel_mse=1.0149 pixel_mae=0.7920 pixel_rmse=1.0037 pixel_max=2.1547 pixel_min=-2.6303 token_norm=18.1603 max_token_norm=28.5588 loss=1.0151 recon_loss=1.0149 l2_reg=0.0002
+[Round 156] global metrics: pixel_mse=1.0469 pixel_mae=0.8067 pixel_rmse=1.0190 pixel_max=2.1879 pixel_min=-2.6182 token_norm=18.3232 max_token_norm=28.5820 loss=1.0471 recon_loss=1.0469 l2_reg=0.0002
+[Round 157] global metrics: pixel_mse=1.0398 pixel_mae=0.8014 pixel_rmse=1.0173 pixel_max=2.1676 pixel_min=-2.6156 token_norm=18.3204 max_token_norm=28.5750 loss=1.0400 recon_loss=1.0398 l2_reg=0.0002
+[Round 158] global metrics: pixel_mse=1.0227 pixel_mae=0.7951 pixel_rmse=1.0080 pixel_max=2.1725 pixel_min=-2.6563 token_norm=18.2045 max_token_norm=28.6072 loss=1.0229 recon_loss=1.0227 l2_reg=0.0002
+[Round 159] global metrics: pixel_mse=1.0534 pixel_mae=0.8057 pixel_rmse=1.0231 pixel_max=2.1776 pixel_min=-2.6858 token_norm=18.1911 max_token_norm=28.6293 loss=1.0536 recon_loss=1.0534 l2_reg=0.0002
+[Round 160] global metrics: pixel_mse=1.0144 pixel_mae=0.7945 pixel_rmse=1.0034 pixel_max=2.1702 pixel_min=-2.6445 token_norm=18.4363 max_token_norm=28.5745 loss=1.0146 recon_loss=1.0144 l2_reg=0.0002
+[Round 161] global metrics: pixel_mse=1.0184 pixel_mae=0.7892 pixel_rmse=1.0059 pixel_max=2.1791 pixel_min=-2.6316 token_norm=18.2072 max_token_norm=28.5505 loss=1.0186 recon_loss=1.0184 l2_reg=0.0002
+[Round 162] global metrics: pixel_mse=1.0151 pixel_mae=0.7922 pixel_rmse=1.0044 pixel_max=2.1430 pixel_min=-2.6702 token_norm=18.2502 max_token_norm=28.5739 loss=1.0153 recon_loss=1.0151 l2_reg=0.0002
+[Round 163] global metrics: pixel_mse=1.0487 pixel_mae=0.8055 pixel_rmse=1.0216 pixel_max=2.1811 pixel_min=-2.6602 token_norm=18.3449 max_token_norm=28.6062 loss=1.0490 recon_loss=1.0487 l2_reg=0.0002
+[Round 164] global metrics: pixel_mse=1.0833 pixel_mae=0.8224 pixel_rmse=1.0385 pixel_max=2.2078 pixel_min=-2.6648 token_norm=18.3688 max_token_norm=28.5706 loss=1.0835 recon_loss=1.0833 l2_reg=0.0002
+[Round 165] global metrics: pixel_mse=1.0106 pixel_mae=0.7854 pixel_rmse=1.0016 pixel_max=2.1698 pixel_min=-2.6928 token_norm=18.0421 max_token_norm=28.6181 loss=1.0108 recon_loss=1.0106 l2_reg=0.0002
+[Round 166] global metrics: pixel_mse=1.0131 pixel_mae=0.7965 pixel_rmse=1.0037 pixel_max=2.1581 pixel_min=-2.6553 token_norm=18.4527 max_token_norm=28.6341 loss=1.0134 recon_loss=1.0131 l2_reg=0.0002
+[Round 167] global metrics: pixel_mse=1.0433 pixel_mae=0.8025 pixel_rmse=1.0176 pixel_max=2.1802 pixel_min=-2.6729 token_norm=18.3895 max_token_norm=28.5939 loss=1.0435 recon_loss=1.0433 l2_reg=0.0002
+[Round 168] global metrics: pixel_mse=1.0475 pixel_mae=0.8015 pixel_rmse=1.0196 pixel_max=2.1986 pixel_min=-2.6531 token_norm=18.3460 max_token_norm=28.6041 loss=1.0478 recon_loss=1.0475 l2_reg=0.0002
+[Round 169] global metrics: pixel_mse=1.0777 pixel_mae=0.8189 pixel_rmse=1.0345 pixel_max=2.1979 pixel_min=-2.6655 token_norm=18.5428 max_token_norm=28.5876 loss=1.0780 recon_loss=1.0777 l2_reg=0.0002
+[Round 170] global metrics: pixel_mse=1.0332 pixel_mae=0.8001 pixel_rmse=1.0131 pixel_max=2.1849 pixel_min=-2.6777 token_norm=18.3175 max_token_norm=28.5869 loss=1.0334 recon_loss=1.0332 l2_reg=0.0002
+[Round 171] global metrics: pixel_mse=1.0332 pixel_mae=0.7993 pixel_rmse=1.0142 pixel_max=2.1619 pixel_min=-2.6519 token_norm=18.2855 max_token_norm=28.5503 loss=1.0334 recon_loss=1.0332 l2_reg=0.0002
+[Round 172] global metrics: pixel_mse=1.0256 pixel_mae=0.7938 pixel_rmse=1.0094 pixel_max=2.1435 pixel_min=-2.6422 token_norm=18.0860 max_token_norm=28.5899 loss=1.0258 recon_loss=1.0256 l2_reg=0.0002
+[Round 173] global metrics: pixel_mse=1.0298 pixel_mae=0.7947 pixel_rmse=1.0116 pixel_max=2.1861 pixel_min=-2.6442 token_norm=18.2265 max_token_norm=28.6083 loss=1.0300 recon_loss=1.0298 l2_reg=0.0002
+[Round 174] global metrics: pixel_mse=1.0636 pixel_mae=0.8160 pixel_rmse=1.0290 pixel_max=2.2030 pixel_min=-2.6356 token_norm=18.5371 max_token_norm=28.5686 loss=1.0638 recon_loss=1.0636 l2_reg=0.0002
+[Round 175] global metrics: pixel_mse=1.0675 pixel_mae=0.8084 pixel_rmse=1.0298 pixel_max=2.2128 pixel_min=-2.6640 token_norm=18.3371 max_token_norm=28.5550 loss=1.0677 recon_loss=1.0675 l2_reg=0.0002
+[Round 176] global metrics: pixel_mse=1.0918 pixel_mae=0.8224 pixel_rmse=1.0419 pixel_max=2.2054 pixel_min=-2.6544 token_norm=18.5497 max_token_norm=28.6210 loss=1.0920 recon_loss=1.0918 l2_reg=0.0002
+[Round 177] global metrics: pixel_mse=1.0468 pixel_mae=0.8068 pixel_rmse=1.0206 pixel_max=2.1918 pixel_min=-2.6440 token_norm=18.4600 max_token_norm=28.6364 loss=1.0470 recon_loss=1.0468 l2_reg=0.0002
+[Round 178] global metrics: pixel_mse=1.0116 pixel_mae=0.7913 pixel_rmse=1.0022 pixel_max=2.1717 pixel_min=-2.6071 token_norm=18.3599 max_token_norm=28.5293 loss=1.0118 recon_loss=1.0116 l2_reg=0.0002
+[Round 179] global metrics: pixel_mse=1.0040 pixel_mae=0.7862 pixel_rmse=0.9988 pixel_max=2.1717 pixel_min=-2.6842 token_norm=18.3706 max_token_norm=28.7012 loss=1.0042 recon_loss=1.0040 l2_reg=0.0002
+[Round 180] global metrics: pixel_mse=1.0669 pixel_mae=0.8156 pixel_rmse=1.0301 pixel_max=2.1846 pixel_min=-2.6477 token_norm=18.5188 max_token_norm=28.5568 loss=1.0672 recon_loss=1.0669 l2_reg=0.0002
+[Round 181] global metrics: pixel_mse=1.0651 pixel_mae=0.8118 pixel_rmse=1.0283 pixel_max=2.1637 pixel_min=-2.6455 token_norm=18.5014 max_token_norm=28.6036 loss=1.0654 recon_loss=1.0651 l2_reg=0.0002
+[Round 182] global metrics: pixel_mse=1.0660 pixel_mae=0.8154 pixel_rmse=1.0300 pixel_max=2.1703 pixel_min=-2.6555 token_norm=18.5168 max_token_norm=28.6269 loss=1.0663 recon_loss=1.0660 l2_reg=0.0002
+[Round 183] global metrics: pixel_mse=1.0227 pixel_mae=0.7958 pixel_rmse=1.0080 pixel_max=2.1742 pixel_min=-2.6662 token_norm=18.2040 max_token_norm=28.6535 loss=1.0229 recon_loss=1.0227 l2_reg=0.0002
+[Round 184] global metrics: pixel_mse=1.0446 pixel_mae=0.8042 pixel_rmse=1.0196 pixel_max=2.1627 pixel_min=-2.6804 token_norm=18.4320 max_token_norm=28.7182 loss=1.0449 recon_loss=1.0446 l2_reg=0.0002
+[Round 185] global metrics: pixel_mse=1.0340 pixel_mae=0.7987 pixel_rmse=1.0137 pixel_max=2.1692 pixel_min=-2.6283 token_norm=18.4325 max_token_norm=28.5737 loss=1.0343 recon_loss=1.0340 l2_reg=0.0002
+[Round 186] global metrics: pixel_mse=1.0401 pixel_mae=0.8002 pixel_rmse=1.0169 pixel_max=2.1989 pixel_min=-2.6334 token_norm=18.2545 max_token_norm=28.5771 loss=1.0404 recon_loss=1.0401 l2_reg=0.0002
+[Round 187] global metrics: pixel_mse=1.0686 pixel_mae=0.8150 pixel_rmse=1.0299 pixel_max=2.1925 pixel_min=-2.6662 token_norm=18.5150 max_token_norm=28.6107 loss=1.0688 recon_loss=1.0686 l2_reg=0.0002
+[Round 188] global metrics: pixel_mse=1.0207 pixel_mae=0.7956 pixel_rmse=1.0070 pixel_max=2.1632 pixel_min=-2.6658 token_norm=18.3433 max_token_norm=28.6400 loss=1.0209 recon_loss=1.0207 l2_reg=0.0002
+[Round 189] global metrics: pixel_mse=1.0412 pixel_mae=0.7975 pixel_rmse=1.0179 pixel_max=2.1896 pixel_min=-2.6375 token_norm=18.2376 max_token_norm=28.5941 loss=1.0415 recon_loss=1.0412 l2_reg=0.0002
+[Round 190] global metrics: pixel_mse=1.0190 pixel_mae=0.7921 pixel_rmse=1.0074 pixel_max=2.2003 pixel_min=-2.6460 token_norm=18.2577 max_token_norm=28.6566 loss=1.0192 recon_loss=1.0190 l2_reg=0.0002
+[Round 191] global metrics: pixel_mse=1.0582 pixel_mae=0.8085 pixel_rmse=1.0259 pixel_max=2.2010 pixel_min=-2.6427 token_norm=18.3868 max_token_norm=28.5848 loss=1.0584 recon_loss=1.0582 l2_reg=0.0002
+[Round 192] global metrics: pixel_mse=1.0469 pixel_mae=0.8055 pixel_rmse=1.0197 pixel_max=2.2016 pixel_min=-2.6485 token_norm=18.4360 max_token_norm=28.5822 loss=1.0471 recon_loss=1.0469 l2_reg=0.0002
+[Round 193] global metrics: pixel_mse=1.0554 pixel_mae=0.8082 pixel_rmse=1.0243 pixel_max=2.2020 pixel_min=-2.6585 token_norm=18.5606 max_token_norm=28.5739 loss=1.0556 recon_loss=1.0554 l2_reg=0.0002
+[Round 194] global metrics: pixel_mse=1.0193 pixel_mae=0.7888 pixel_rmse=1.0049 pixel_max=2.1774 pixel_min=-2.6361 token_norm=18.2557 max_token_norm=28.5213 loss=1.0196 recon_loss=1.0193 l2_reg=0.0002
+[Round 195] global metrics: pixel_mse=1.0656 pixel_mae=0.8147 pixel_rmse=1.0290 pixel_max=2.1742 pixel_min=-2.6552 token_norm=18.5358 max_token_norm=28.5573 loss=1.0659 recon_loss=1.0656 l2_reg=0.0002
+[Round 196] global metrics: pixel_mse=1.0238 pixel_mae=0.7975 pixel_rmse=1.0100 pixel_max=2.1822 pixel_min=-2.6310 token_norm=18.4074 max_token_norm=28.5503 loss=1.0241 recon_loss=1.0238 l2_reg=0.0002
+[Round 197] global metrics: pixel_mse=1.0588 pixel_mae=0.8082 pixel_rmse=1.0249 pixel_max=2.1554 pixel_min=-2.6813 token_norm=18.4917 max_token_norm=28.6383 loss=1.0591 recon_loss=1.0588 l2_reg=0.0002
+[Round 198] global metrics: pixel_mse=1.0777 pixel_mae=0.8167 pixel_rmse=1.0357 pixel_max=2.1867 pixel_min=-2.6744 token_norm=18.2848 max_token_norm=28.6076 loss=1.0779 recon_loss=1.0777 l2_reg=0.0002
+[Round 199] global metrics: pixel_mse=1.0366 pixel_mae=0.7983 pixel_rmse=1.0152 pixel_max=2.1883 pixel_min=-2.6381 token_norm=18.2682 max_token_norm=28.5496 loss=1.0368 recon_loss=1.0366 l2_reg=0.0002
+[Round 200] global metrics: pixel_mse=1.0801 pixel_mae=0.8194 pixel_rmse=1.0359 pixel_max=2.1933 pixel_min=-2.6897 token_norm=18.5351 max_token_norm=28.6762 loss=1.0804 recon_loss=1.0801 l2_reg=0.0002
+[Done] training completed. final checkpoint saved.

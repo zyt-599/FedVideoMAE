@@ -1,0 +1,19 @@
+# PyTorch stack (Python 3.9, CUDA 12.8)
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.8.0+cu128
+torchvision==0.23.0+cu128
+torchaudio==2.8.0+cu128
+
+transformers==4.30.2
+timm>=0.9
+decord>=0.6.0
+opencv-python-headless>=4.8
+numpy>=1.21
+scikit-learn>=1.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+pyyaml
+rich
+tqdm
+opacus>=1.4.0
+nvflare==2.6.2

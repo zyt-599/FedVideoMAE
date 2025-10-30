@@ -1,0 +1,104 @@
+experiment: central_weak_finetune_rwf2000
+output_dir: FedVideomae_DP/runs/central_weak_finetune_rwf2000_epsilon_10
+seed: 42
+
+data:
+  root: FedVideomae_DP/dataset/RWF-2000/train
+  val_root: FedVideomae_DP/dataset/RWF-2000/val
+  num_frames: 8
+  frame_stride: 4
+  size: 224
+  batch_size: 32
+  num_workers: 8
+  pin_memory: true
+  val_pin_memory: true
+  val_batch_size: 16
+  aug:
+    jitter_b: 0.25
+    jitter_c: 0.20
+    jitter_s: 0.18
+    grayscale_p: 0.15
+    erase_p: 0.10
+    erase_scale: [0.02, 0.08]
+    erase_ratio: [0.3, 3.3]
+
+model:
+  model_name: MCG-NJU/videomae-base
+  pretrained_checkpoint: FedVideomae_DP/runs/pretrain_rwf2000_epsilon_10/model_final.pth
+  head:
+    num_classes: 2
+    type: mlp
+    hidden_dim: 1536
+    num_layers: 2
+    dropout: 0.2
+  peft:
+    use_lora: true
+    lora_r: 16
+    lora_alpha: 32
+    lora_dropout: 0.0
+    backprop_backbone: false  # freeze LoRA in phase-1 (only train head)
+    train_last_blocks: 0
+    target_modules: [q_proj, k_proj, v_proj, out_proj, fc1, fc2]
+
+training:
+  epochs: 20
+  lr: 1.5e-4
+  weight_decay: 0.01
+  lr_scheduler: cosine
+  clip_grad: 1.0
+  use_amp: true
+
+  # Baseline: use thresholded metric for model selection
+  threshold_scan_metric: f1_macro
+  select_best_metric: f1_macro_thr    # acc | loss | f1_macro | f1_weighted | precision_macro | recall_macro | f1_macro_thr | thr_metric
+  weighted_sampler: false
+  use_focal: false
+  focal_gamma: 1.5
+  grad_checkpoint: false
+  deterministic: true
+  disable_oom_autotune: true
+  grad_accum_steps: 2
+  
+  min_lr: 1.0e-6
+
+  unfreeze_base: false
+
+  # Phase-1: disable backbone/LoRA updates entirely for a sensitive comparison
+  unfreeze_schedule: []
+
+  warmup_epochs: 5
+  clear_cache_each_epoch: true
+  # calibration-friendly CE
+  label_smoothing: 0.0
+  class_weights: [1.25, 1.0]
+  mixup:
+    enable: false
+    alpha: 0.2
+    prob: 0.3
+    start_after_first_unfreeze: true
+    disable_after_epoch: 65
+
+  ema:
+    enable: false
+    decay: 0.9995
+    update_every: 8
+
+  # Late-training window adjustments (auto-applied between start_epoch..end_epoch)
+  # Keys supported: label_smoothing, mixup_prob, ema_decay
+  window_adjustments:
+    - start_epoch: 45
+      end_epoch: 50
+      label_smoothing: 0.0
+      mixup_prob: 0.2
+      ema_decay: 0.995
+    - start_epoch: 51
+      end_epoch: 55
+      label_smoothing: 0.02
+      mixup_prob: 0.3
+      ema_decay: 0.9995
+    - start_epoch: 56
+      end_epoch: 100
+      class_weights: [1.15, 1.0]
+
+logging:
+  log_every: 20

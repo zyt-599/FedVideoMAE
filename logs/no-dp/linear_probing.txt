@@ -1,0 +1,105 @@
+(FedVideoMAE) root@autodl-container-0ae04496b0-85f84cc2:~/autodl-tmp# python -m FedVideomae_DP.train.fl_eval_linear --config configs/linear_probe_rwf2000.yaml
+[LoRA] Injected 100 layers -> LoRALinear; samples: ['backbone.encoder.blocks.0.attn.q_proj', 'backbone.encoder.blocks.0.attn.k_proj', 'backbone.encoder.blocks.0.attn.v_proj', 'backbone.encoder.blocks.0.mlp.fc1', 'backbone.encoder.blocks.0.mlp.fc2', 'backbone.encoder.blocks.1.attn.q_proj', 'backbone.encoder.blocks.1.attn.k_proj', 'backbone.encoder.blocks.1.attn.v_proj'] ...; trainable params=3145728
+Warning: Missing keys when loading pretrained weights: 20 keys
+Warning: Unexpected keys when loading pretrained weights: 3 keys
+Loaded pretrained weights from FedVideomae_DP/runs/pretrain_rwf2000_epsilon_noDP/model_final.pth
+Using weighted loss with class weights: [1.2, 1.3]
+
+[Server] Round 1/20 | selected=['0']
+[Client0] Final: loss=0.7075 acc=0.7188                                                                                 
+[Server] Round 1 global metrics: loss=0.7075 acc=0.7188
+
+[Server] Round 2/20 | selected=['0']
+[Client0] Final: loss=0.5061 acc=0.7812                                                                                 
+[Server] Round 2 global metrics: loss=0.5061 acc=0.7812
+
+[Server] Round 3/20 | selected=['0']
+[Client0] Final: loss=0.5597 acc=0.7188                                                                                 
+[Server] Round 3 global metrics: loss=0.5597 acc=0.7188
+
+[Server] Round 4/20 | selected=['0']
+[Client0] Final: loss=0.3867 acc=0.8438                                                                                 
+[Server] Round 4 global metrics: loss=0.3867 acc=0.8438
+
+[Server] Round 5/20 | selected=['0']
+[Client0] Final: loss=0.7710 acc=0.6250                                                                                 
+[Server] Round 5 global metrics: loss=0.7710 acc=0.6250
+
+[Server] Round 6/20 | selected=['0']
+[Client0] Final: loss=0.6695 acc=0.6250                                                                                 
+[Server] Round 6 global metrics: loss=0.6695 acc=0.6250
+
+[Server] Round 7/20 | selected=['0']
+[Client0] Final: loss=0.5005 acc=0.8438                                                                                 
+[Server] Round 7 global metrics: loss=0.5005 acc=0.8438
+
+[Server] Round 8/20 | selected=['0']
+[Client0] Final: loss=0.5603 acc=0.7188                                                                                 
+[Server] Round 8 global metrics: loss=0.5603 acc=0.7188
+
+[Server] Round 9/20 | selected=['0']
+[Client0] Final: loss=0.5214 acc=0.7188                                                                                 
+[Server] Round 9 global metrics: loss=0.5214 acc=0.7188
+
+[Server] Round 10/20 | selected=['0']
+[Client0] Final: loss=0.5175 acc=0.6875                                                                                 
+[Server] Round 10 global metrics: loss=0.5175 acc=0.6875
+
+[Server] Round 11/20 | selected=['0']
+[Client0] Final: loss=0.6330 acc=0.6875                                                                                 
+[Server] Round 11 global metrics: loss=0.6330 acc=0.6875
+
+[Server] Round 12/20 | selected=['0']
+[Client0] Final: loss=0.6102 acc=0.7188                                                                                 
+[Server] Round 12 global metrics: loss=0.6102 acc=0.7188
+
+[Server] Round 13/20 | selected=['0']
+[Client0] Final: loss=0.3998 acc=0.9062                                                                                 
+[Server] Round 13 global metrics: loss=0.3998 acc=0.9062
+
+[Server] Round 14/20 | selected=['0']
+[Client0] Final: loss=0.5314 acc=0.7188                                                                                 
+[Server] Round 14 global metrics: loss=0.5314 acc=0.7188
+
+[Server] Round 15/20 | selected=['0']
+[Client0] Final: loss=0.7015 acc=0.7500                                                                                 
+[Server] Round 15 global metrics: loss=0.7015 acc=0.7500
+
+[Server] Round 16/20 | selected=['0']
+[Client0] Final: loss=0.5799 acc=0.7812                                                                                 
+[Server] Round 16 global metrics: loss=0.5799 acc=0.7812
+
+[Server] Round 17/20 | selected=['0']
+[Client0] Final: loss=0.4445 acc=0.8125                                                                                 
+[Server] Round 17 global metrics: loss=0.4445 acc=0.8125
+
+[Server] Round 18/20 | selected=['0']
+[Client0] Final: loss=0.4056 acc=0.8438                                                                                 
+[Server] Round 18 global metrics: loss=0.4056 acc=0.8438
+
+[Server] Round 19/20 | selected=['0']
+[Client0] Final: loss=1.0153 acc=0.5312                                                                                 
+[Server] Round 19 global metrics: loss=1.0153 acc=0.5312
+
+[Server] Round 20/20 | selected=['0']
+[Client0] Final: loss=0.3344 acc=0.8125                                                                                 
+[Server] Round 20 global metrics: loss=0.3344 acc=0.8125
+
+[Server] 训练完成！最终模型已保存到: runs/linear_probe_rwf2000/model_final.pth
+
+=== Final Model Evaluation ===
+Accuracy: 0.7250
+Precision (Weighted): 0.7344
+Recall (Weighted): 0.7250
+F1-Score (Weighted): 0.7222
+Precision (Macro): 0.7344
+Recall (Macro): 0.7250
+F1-Score (Macro): 0.7222
+ROC-AUC: 0.8070
+Average Precision: 0.7939
+
+Confusion Matrix:
+         Predicted
+         NonFight  Fight
+Actual NonFight    125     75
+       Fight         35    165
