@@ -1,5 +1,9 @@
 # Federated VideoMAE (pMAE-style) for Self-Supervised Video Classification
 
+**Paper:** [FedVideoMAE: Efficient Privacy-Preserving Federated Video Moderation](https://arxiv.org/abs/2512.18809)
+
+![High-Level Architecture](img/high-level-architecture.pdf)
+
 This project adapts the pMAE paradigm of "parameter-efficient + reconstructive prompt + server-side reconstruction/fine-tuning" to the video domain, based on VideoMAE for self-supervised pretraining, and performs federated evaluation (linear probing/small head fine-tuning) on RWF-2000. It can be smoothly extended to similar datasets like RLVS, HockeyFight, UCF-Crime, etc.
 
 ## Features Overview
@@ -11,25 +15,10 @@ This project adapts the pMAE paradigm of "parameter-efficient + reconstructive p
   - Small head fine-tuning (freeze backbone + federated fine-tuning of small head with few parameters)
 - Dataset: RWF-2000 (extensible to other datasets)
 
+![Visualized Results](img/visulaized_result.pdf)
+
 ## Dependencies
 Recommended Python 3.9
-
-- torch==2.8.0+cu128
-- torchvision==0.23.0+cu128
-- torchaudio==2.8.0+cu128
-- transformers==4.30.2
-- timm>=0.9
-- decord>=0.6.0
-- opencv-python-headless>=4.8
-- numpy>=1.21
-- scikit-learn>=1.0
-- matplotlib>=3.5.0
-- seaborn>=0.11.0
-- pyyaml
-- rich
-- tqdm
-- opacus>=1.4.0
-- nvflare==2.6.2
 
 Quick installation:
 
@@ -85,32 +74,56 @@ python -m FedVideomae_DP.train.fl_pretrain \
   --config configs/pretrain_rwf2000.yaml
 ```
 
-### 2. Evaluate Pretrained Model
+### 2. Linear Probing (Central)
 
 ```bash
-python -m FedVideomae_DP.train.evaluate_pretrained \
-  --config configs/evaluate_pretrained.yaml \
-  --checkpoint /path/to/pretrained/model.pth \
-  --output_dir evaluation_results \
-  --num_samples 20 \
-  --visualize \
-  --extract_features
+python -m FedVideomae_DP.train.central_linear_probe \
+  --config configs/linear_probe_rwf2000_epsilon_1.yaml
 ```
 
-**Note**: Replace `/path/to/pretrained/model.pth` with your actual model checkpoint path.
+The provided config points to a specific pretrained checkpoint. Duplicate and edit it to match your run (e.g., epsilon target, checkpoint path, output_dir).
 
-### 3. Linear Probing
+### 3. Small-Head Fine-tuning
+
+- Federated small-head fine-tuning (use your fine-tune config with a federated block):
 
 ```bash
-python -m FedVideomae_DP.train.fl_eval_linear \
-  --config configs/linear_probe_rwf2000.yaml
+python -m FedVideomae_DP.train.fl_fine_tuning \
+  --config <your_federated_finetune_config>.yaml
 ```
 
-### 4. Small Head Fine-tuning
+- Central small-head fine-tuning (weak head):
 
 ```bash
-python -m FedVideomae_DP.train.fl_eval_tunehead \
-  --config configs/finetune_head_rwf2000.yaml
+python -m FedVideomae_DP.train.central_weak_finetune \
+  --config configs/central_weak_finetune_rwf2000.yaml
+```
+
+### 4. Evaluation (Pretrained or Small-Head)
+
+Typical classification evaluation with threshold scan and TTA, without extra outputs:
+
+```bash
+python -m FedVideomae_DP.train.evaluate \
+  --config configs/evaluate_small_head_rwf2000.yaml \
+  --model_type small_head \
+  --threshold_scan \
+  --scan_metric f1_macro \
+  --tta_hflip \
+  --temporal_clips 3 \
+  --deterministic_temporal
+```
+
+- Omit `--output_dir`, `--visualize`, and `--extract_features` to use defaults and skip visuals/features.
+- To fix the decision threshold manually, pass `--threshold 0.50` (overrides scan).
+- To re-compute metrics at the best scanned threshold, add `--apply_best_threshold`.
+
+For reconstruction evaluation on a pretrained model:
+
+```bash
+python -m FedVideomae_DP.train.evaluate \
+  --config configs/evaluate_small_head_rwf2000.yaml \
+  --model_type pretrained
 ```
 
 ### 5. Feature Analysis
@@ -154,10 +167,10 @@ This will print versions of key libraries and basic introspection of the Transfo
 
 ## Configuration Files
 
-- `configs/pretrain_rwf2000.yaml` - Federated pretraining configuration
-- `configs/linear_probe_rwf2000.yaml` - Linear probing configuration  
-- `configs/finetune_head_rwf2000.yaml` - Small head fine-tuning configuration
-- `configs/evaluate_pretrained.yaml` - Pretrained model evaluation configuration
+- `configs/pretrain_rwf2000.yaml` — Federated pretraining configuration
+- `configs/linear_probe_rwf2000_epsilon_1.yaml` — Linear probing (central) example; duplicate and edit for your run
+- `configs/central_weak_finetune_rwf2000.yaml` — Central small-head fine-tuning configuration
+- `configs/evaluate_small_head_rwf2000.yaml` — Evaluation (small-head) example; can also be used with `--model_type pretrained`
 
 ## Output Files
 
