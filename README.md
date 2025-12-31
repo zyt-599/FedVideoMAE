@@ -2,7 +2,7 @@
 
 **Paper:** [FedVideoMAE: Efficient Privacy-Preserving Federated Video Moderation](https://arxiv.org/abs/2512.18809)
 
-![High-Level Architecture](img/high-level-architecture.pdf)
+![High-Level Architecture](img/high-level-architecture.png)
 
 This project adapts the pMAE paradigm of "parameter-efficient + reconstructive prompt + server-side reconstruction/fine-tuning" to the video domain, based on VideoMAE for self-supervised pretraining, and performs federated evaluation (linear probing/small head fine-tuning) on RWF-2000. It can be smoothly extended to similar datasets like RLVS, HockeyFight, UCF-Crime, etc.
 
@@ -15,7 +15,7 @@ This project adapts the pMAE paradigm of "parameter-efficient + reconstructive p
   - Small head fine-tuning (freeze backbone + federated fine-tuning of small head with few parameters)
 - Dataset: RWF-2000 (extensible to other datasets)
 
-![Visualized Results](img/visulaized_result.pdf)
+![Visualized Results](img/visulaized_result.png)
 
 ## Dependencies
 Recommended Python 3.9
